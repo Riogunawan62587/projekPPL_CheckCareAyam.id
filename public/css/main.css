@@ -1,0 +1,126 @@
+.jumbotron {
+  background-image: url('/img/2727.jpg');
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.jumbotron .container .as {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+  height: 550px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+  font-family: 'Viga', sans-serif;
+}
+
+.clgn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: coral;
+  border-radius: 10px 10px 0 0;
+  height: 120px;
+  margin-left: -15px;
+  margin-right: -15px;
+  width: auto;
+}
+
+.lgn {
+  color: white;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.logo {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  margin-bottom: -60px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.spnemail {
+  margin-top: 40px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: coral;
+}
+
+.spnpassword {
+  margin-top: 40px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: coral;
+}
+
+.form-control {
+  width: 250px;
+}
+
+input {
+  text-align: center;
+}
+
+.form-horizontal .form-control {
+  padding: 10px 0 10px 0;
+  height: 40px;
+  font-size: 14px;
+  color: #2b2a2a;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 15px;
+}
+
+.form-horizontal .form-control:focus {
+  border-color: coral;
+  box-shadow: none;
+}
+
+.container .cn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container .cn-l {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.tmbl {
+  display: block;
+  width: 90%;
+  border: none;
+  background-color: coral;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 50px;
+}

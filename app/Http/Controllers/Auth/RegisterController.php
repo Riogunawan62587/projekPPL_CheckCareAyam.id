@@ -49,9 +49,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'Username' => ['required', 'string', 'max:255'],
-            'Email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'Password' => ['required', 'string', 'min:8', 'confirmed'],
+            'username' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
@@ -64,16 +64,16 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'Username' => $data['Username'],
-            'Password' => Hash::make($data['Password']),
-            'Nama' => $data['Nama'],
-            'Tanggal_Lahir' => $data['Tanggal_Lahir'],
-            'Alamat' => $data['Alamat'],
-            'No_Telp' => $data['No_Telp'],
-            'Email' => $data['Email'],
-            'Jenis_Kelamin' => $data['Jenis_Kelamin'],
-            'ID_Role' => 1,
-            'Status_Akun' => 'Belum Terverifikasi',
+            'role_id' => 1,
+            'username' => $data['username'],
+            'password' => Hash::make($data['password']),
+            'nama' => $data['nama'],
+            'tanggal_lahir' => $data['tanggal_lahir'],
+            'alamat' => $data['alamat'],
+            'no_telp' => $data['no_telp'],
+            'email' => $data['email'],
+            'jenis_kelamin' => $data['jenis_kelamin'],
+            'status_akun' => 'Belum Terverifikasi',
         ]);
     }
 }

@@ -25,7 +25,7 @@
   border-radius: 10px;
   text-align: center;
   width: 400px;
-  height: 550px;
+  height: 570px;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
   font-family: 'Viga', sans-serif;
 }
@@ -71,7 +71,7 @@
 }
 
 .spnpassword {
-  margin-top: 40px;
+  margin-top: 25px;
   font-size: 16px;
   text-transform: uppercase;
   color: coral;
@@ -124,3 +124,73 @@ input {
   text-align: center;
   border-radius: 50px;
 }
+
+.lppswrd {
+  margin-top: 5px;
+}
+
+.lppswrd a {
+  color: #adadad;
+}
+
+/* NAVBAR */
+nav {
+  font-family: 'Viga', sans-serif;
+}
+
+/* DASHBOARD */
+.nav_set {
+  height: 60px;
+}
+
+.jumbotrondash {
+  background-image: url('/img/2727.jpg');
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.judul {
+  font-family: 'Viga', sans-serif;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.87);
+  border-radius: 50px;
+  padding-top: 10px;
+  justify-content: center;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.konten {
+  font-family: 'Viga', sans-serif;
+  background-color: rgba(255, 255, 255, 0.87);
+  padding-top: 15px;
+  justify-content: center;
+  text-align: center;
+}
+
+.jumlah_pengguna {
+  text-align: left;
+}
+
+.btn-ubah {
+  background-color: coral;
+}
+
+footer {
+  height: 40px;
+}
+

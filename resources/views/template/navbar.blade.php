@@ -1,4 +1,7 @@
 {{-- NAVBAR --}}
+
+<?php $user = Auth::user(); ?>
+
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0 nav_set">
   <div class="container">
     <a href="/home" class="navbar-brand">DASHBOARD+</a>
@@ -33,6 +36,9 @@
           </a>
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            @if (Auth::check() && Auth::user()->role_id == 2 && Auth::user()->status_akun == 'Terverifikasi')
+            <a class="dropdown-item" href="{{ route('home.profil_saya', $user->id) }}">Profil Saya</a>
+            @endif
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
               {{ __('Logout') }}

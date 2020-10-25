@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -23,17 +25,28 @@ class UserController extends Controller
         return view('admin.manaj_user', compact('user', 'no', 'jumlah_user'));
     }
 
+    protected function validator(Request $request)
+    {
+        return Validator::make($request, [
+            'username' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+    }
+
     public function create()
     {
         return view('admin.create');
     }
 
+
+
     public function store(Request $request)
     {
         $user = new User;
-        $user->role_id            = 2;
+        $user->role_id            = 1;
         $user->username           = $request->username;
-        $user->password           = $request->password;
+        $user->password           = Hash::make($request->password);
         $user->nama               = $request->nama;
         $user->tanggal_lahir      = $request->tanggal_lahir;
         $user->alamat             = $request->alamat;
@@ -67,7 +80,6 @@ class UserController extends Controller
         $user->no_telp            = $request->no_telp;
         $user->email              = $request->email;
         $user->jenis_kelamin      = $request->jenis_kelamin;
-        $user->password           = $request->password;
         $user->update();
         return redirect('/user');
     }

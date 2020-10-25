@@ -70,18 +70,18 @@
                             <div class="container cn-l">
                                 <a class="btn btn-primary tmbl" href="{{ route('register') }}">{{ __('Daftar') }}</a>
                             </div>
-                            <div class="container lppswrd">
+                            {{-- <div class="container lppswrd">
                                 @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Lupa Password?') }}
-                                </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                            {{ __('Lupa Password?') }}
+                            </a>
+                            @endif
+                        </div> --}}
                 </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

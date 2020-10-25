@@ -12,7 +12,7 @@
           <div class="card-header">{{ __('Edit Data') }}</div>
 
           <div class="card-body">
-            <form method="POST" action="{{ route('user.update', $user->id) }}">
+            <form method="POST" action="{{ route('home.update', $user->id) }}">
               @csrf
 
               <div class="form-group row">
@@ -135,7 +135,7 @@
                   <button type="submit" class="btn btn-primary">
                     {{ __('Update') }}
                   </button>
-                  <a href="/user" class="btn btn-danger">Batal</a>
+                  <a href="/home" class="btn btn-danger">Batal</a>
                 </div>
               </div>
             </form>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -34,6 +35,15 @@ class HomeController extends Controller
         return view('admin.profil_saya', compact('user'));
     }
 
+    protected function validator(Request $request)
+    {
+        return Validator::make($request, [
+            'username' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+    }
+
     public function edit($id)
     {
         $user = User::find($id);
@@ -44,13 +54,13 @@ class HomeController extends Controller
     {
         $user = User::find($id);
         $user->username           = $request->username;
+        $user->password           = Hash::make($request->password);
         $user->nama               = $request->nama;
         $user->tanggal_lahir      = $request->tanggal_lahir;
         $user->alamat             = $request->alamat;
         $user->no_telp            = $request->no_telp;
         $user->email              = $request->email;
         $user->jenis_kelamin      = $request->jenis_kelamin;
-        $user->password           = Hash::make($request->password);
         $user->update();
         return redirect('/home.profil_saya');
     }

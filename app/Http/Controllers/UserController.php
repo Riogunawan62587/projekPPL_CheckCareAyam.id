@@ -74,6 +74,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->username           = $request->username;
+        $user->password           = Hash::make($request->password);
         $user->nama               = $request->nama;
         $user->tanggal_lahir      = $request->tanggal_lahir;
         $user->alamat             = $request->alamat;

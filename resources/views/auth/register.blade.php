@@ -104,15 +104,15 @@
                             <div class="col-md-6" style="margin-top: auto; margin-bottom: auto">
                                 <div class="col" style="display: inline">
                                     <input id="jenis_kelamin" type="radio"
-                                        class="form-control @error('jenis_kelamin') is-invalid @enderror"
-                                        name="jenis_kelamin" value="laki - laki" required> Laki
+                                        class=" @error('jenis_kelamin') is-invalid @enderror" name="jenis_kelamin"
+                                        value="laki - laki" required> Laki
                                     - Laki
                                 </div>
 
                                 <div class="col" style="display: inline">
                                     <input id="jenis_kelamin" type="Radio"
-                                        class="form-control @error('jenis_kelamin') is-invalid @enderror"
-                                        name="jenis_kelamin" value="perempuan" required> Perempuan
+                                        class=" @error('jenis_kelamin') is-invalid @enderror" name="jenis_kelamin"
+                                        value="perempuan" required> Perempuan
                                     @error('jenis_kelamin')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

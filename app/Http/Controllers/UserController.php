@@ -7,6 +7,11 @@ use App\User;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(1);
+    }
+
     public function index()
     {
         $batas = 5;
@@ -26,9 +31,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User;
-        $user->role_id            = 1;
+        $user->role_id            = 2;
         $user->username           = $request->username;
-        $user->password           = 'admin';
+        $user->password           = $request->password;
         $user->nama               = $request->nama;
         $user->tanggal_lahir      = $request->tanggal_lahir;
         $user->alamat             = $request->alamat;
@@ -37,6 +42,33 @@ class UserController extends Controller
         $user->jenis_kelamin      = $request->jenis_kelamin;
         $user->status_akun        = 'Terverifikasi';
         $user->save();
+        return redirect('/user');
+    }
+
+    public function detail($id)
+    {
+        $user = User::find($id);
+        return view('admin.detail', compact('user'));
+    }
+
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('admin.edit', compact('user'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->username           = $request->username;
+        $user->nama               = $request->nama;
+        $user->tanggal_lahir      = $request->tanggal_lahir;
+        $user->alamat             = $request->alamat;
+        $user->no_telp            = $request->no_telp;
+        $user->email              = $request->email;
+        $user->jenis_kelamin      = $request->jenis_kelamin;
+        $user->password           = $request->password;
+        $user->update();
         return redirect('/user');
     }
 

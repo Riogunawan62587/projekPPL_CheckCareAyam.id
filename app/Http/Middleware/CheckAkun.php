@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class CheckAkun
 {
@@ -15,12 +16,9 @@ class CheckAkun
      */
     public function handle($request, Closure $next)
     {
-        if (auth()->user()->role == 1) {
-            return redirect('home');
-        } else {
-            return redirect('login');
+        if (!(Auth::user()->role_id == 1)) {
+            return redirect()->back();
         }
-
         return $next($request);
     }
 }

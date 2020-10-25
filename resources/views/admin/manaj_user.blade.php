@@ -1,5 +1,7 @@
 @extends('template.master')
 
+@section('title', 'Manajemen User')
+
 @section('content')
 
 <div class="jumbotrondash">

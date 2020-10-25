@@ -7,12 +7,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav">
+        @if (Auth::check() && Auth::user()->role_id == 1 || Auth::user()->role_id == 2 && Auth::user()->status_akun ==
+        'Terverifikasi')
         <li class="nav-item px-2">
-          <a href="" class="nav-link">Informasi Penyakit</a>
+          <a href="/home" class="nav-link">Informasi Penyakit</a>
         </li>
+        @endif
+        @if (Auth::check() && Auth::user()->role_id == 1)
         <li class="nav-item px-2">
           <a href="/user" class="nav-link">Manajemen User</a>
         </li>
+        @endif
       </ul>
       <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->

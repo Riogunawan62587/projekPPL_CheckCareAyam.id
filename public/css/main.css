@@ -194,3 +194,57 @@ footer {
   height: 40px;
 }
 
+/* Detail */
+
+.jumbotrondetail {
+  background-image: url('/img/2727.jpg');
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.card {
+  font-family: 'Viga', sans-serif;
+  justify-content: center;
+  height: auto;
+}
+
+.tbl {
+  margin-bottom: 0px;
+}
+
+
+/* Edit */
+.jumbotronedit {
+  background-image: url('/img/2727.jpg');
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+

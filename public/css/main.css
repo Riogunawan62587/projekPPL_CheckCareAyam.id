@@ -248,3 +248,93 @@ footer {
   position: relative;
 }
 
+/* Daftar Penyakit */
+.jumbotron-daftar_penyakit {
+  background-image: url('/img/2727.jpg');
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.daftar_penyakit {
+  background-color: rgba(0, 0, 0, 0.76);
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: inline-block;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  color: white;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  font-family: 'Viga', sans-serif;
+}
+
+.garis {
+  background-color: white;
+}
+
+.gbr {
+  border-radius: 50px;
+  background-color: coral;
+  width: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+.btn-bntk {
+  border-radius: 50px;
+}
+
+.card {
+  color: black;
+  padding: 0px;
+  border: none;
+}
+
+.card-img-top {
+  background-color: coral;
+}
+
+.form-horizontal .text-center .as {
+  padding: 10px 0 10px 0;
+  height: 40px;
+  font-size: 14px;
+  color: #2b2a2a;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 15px;
+}
+
+.form-control {
+  background: transparent;
+  color: white;
+}
+
+.form-control:focus {
+  background: transparent;
+  color: white;
+}

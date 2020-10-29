@@ -32,3 +32,5 @@ Route::post('/user/delete/{id}', 'UserController@destroy')->name('user.destroy')
 Route::get('/user/edit/{id}', 'UserController@edit')->name('user.edit');
 Route::post('/user/update/{id}', 'UserController@update')->name('user.update');
 Route::post('/users/simpan_status/{id}', 'UserController@simpan_status')->name('user.simpan_status');
+
+Route::get('/daftar_penyakit', 'Disease_listController@index');

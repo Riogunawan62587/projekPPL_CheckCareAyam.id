@@ -336,3 +336,7 @@ footer {
 .form-control:focus {
   background: transparent;
 }
+
+.modalst {
+  color: black;
+}

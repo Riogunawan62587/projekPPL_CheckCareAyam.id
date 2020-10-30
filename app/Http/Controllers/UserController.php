@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\VerifiedMail;
 
 class UserController extends Controller
 {
@@ -97,6 +99,9 @@ class UserController extends Controller
         $user = User::find($id);
         $user->status_akun   = $request->status_akun;
         $user->update();
+
+        // Mail::to($user)->send(new VerifiedMail($user));
+
         return redirect('/user');
     }
 }

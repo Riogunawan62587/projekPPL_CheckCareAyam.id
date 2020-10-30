@@ -105,35 +105,6 @@
     <div class="container">
       <a href="{{}}" class="btn btn-success">Tambah Data</a>
     </div>
-
-
-
-    {{-- <table class="table table-borderless">
-        <thead>
-          <tr>
-            <th scope="col">NO</th>
-            <th scope="col">Gambar</th>
-            <th scope="col">Nama Penyakit</th>
-            <th scope="col">Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row" class="align-middle">1</th>
-            <td><img src="/img/logo2.png" alt="" class="gbr"></td>
-            <td class="align-middle">Mark</td>
-            <td class="align-middle"><button type="button" class="btn btn-light btn-bntk">Detail</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="align-middle">2</th>
-            <td><img src="/img/logo2.png" alt="" class="gbr"></td>
-            <td class="align-middle">Jacob</td>
-            <td class="align-middle"><button type="button" class="btn btn-light btn-bntk">Detail</button>
-            </td>
-          </tr>
-        </tbody>
-      </table> --}}
   </div>
 </div>
 </div>

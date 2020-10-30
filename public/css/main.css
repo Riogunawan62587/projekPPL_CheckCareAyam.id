@@ -331,10 +331,8 @@ footer {
 
 .form-control {
   background: transparent;
-  color: white;
 }
 
 .form-control:focus {
   background: transparent;
-  color: white;
 }

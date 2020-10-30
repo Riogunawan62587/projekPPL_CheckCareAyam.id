@@ -35,3 +35,4 @@ Route::post('/users/simpan_status/{id}', 'UserController@simpan_status')->name('
 
 Route::get('/daftar_penyakit', 'Disease_listController@index');
 Route::post('/daftar_penyakit/simpan_penyakit', 'Disease_listController@simpan_penyakit')->name('daftar_penyakit.simpan_penyakit');
+Route::post('/daftar_penyakit/update_penyakit/{id}', 'Disease_listController@update_penyakit')->name('daftar_penyakit.update_penyakit');

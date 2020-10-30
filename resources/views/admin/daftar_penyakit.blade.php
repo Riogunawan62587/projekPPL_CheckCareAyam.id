@@ -12,13 +12,6 @@
     <div class="container">
       <p>Berisikan Info Tentang Daftar Penyakit yang Biasanya Dialami Oleh Ayam Petelur</p>
     </div>
-    <div class="container">
-      <form action="" method="get">
-        <div class="form-horizontal text-center as d-inline-block">
-          <input type="text" class="form-control text-white" name="kata" placeholder="Cari Disini...">
-        </div>
-      </form>
-    </div>
     <hr class="garis">
     <div class="row">
       @foreach ($daftar_penyakit as $daftar)
@@ -47,7 +40,47 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{-- Modal Edit --}}
+      <div class="modal fade modalst" id="exampleModal2{{ $daftar->id }}" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit Informasi Penyakit</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="{{ route('daftar_penyakit.update_penyakit', $daftar->id) }}" method="post">
+                @csrf
+                <div class="form-group">
+                  <label for="nama_penyakit">Nama Penyakit</label>
+                  <input type="text" class="form-control m-auto" id="nama_penyakit" name="nama_penyakit"
+                    value="{{ $daftar->nama_penyakit }}">
+                </div>
+                <div class="form-group">
+                  <label for="penyebab_penyakit">Penyebab Penyakit</label>
+                  <input type="text" class="form-control m-auto" id="penyebab_penyakit" name="penyebab_penyakit"
+                    value="{{ $daftar->penyebab_penyakit }}">
+                </div>
+                <div class="form-group">
+                  <label for="gejala_penyakit">Gejala Penyakit</label>
+                  <textarea name="gejala_penyakit" id="gejala_penyakit" cols="30" rows="6"
+                    class="form-control m-auto">{{ $daftar->gejala_penyakit }}</textarea>
+                  {{-- <input type="text-area" class="form-control m-auto" id="gejala_penyakit" name="gejala_penyakit"
+                    value="{{ $daftar->gejala_penyakit }}"> --}}
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Save changes</button>
+              </form>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -68,6 +101,8 @@
             <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1{{ $daftar->id }}">Lihat
               Lebih
               Lengkap</button>
+            <button class="btn btn-success" data-toggle="modal"
+              data-target="#exampleModal2{{ $daftar->id }}">Edit</button>
           </div>
         </div>
       </div>
@@ -75,7 +110,7 @@
     </div>
 
     {{-- Modal Tambah Penyakit --}}
-    <div class="modal fade modalst" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div class="modal fade modalst" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
@@ -98,7 +133,9 @@
               </div>
               <div class="form-group">
                 <label for="gejala_penyakit">Gejala Penyakit</label>
-                <input type="text" class="form-control m-auto" id="gejala_penyakit" name="gejala_penyakit">
+                <textarea name="gejala_penyakit" id="gejala_penyakit" cols="30" rows="6"
+                  class="form-control m-auto"></textarea>
+                {{-- <input type="text" class="form-control m-auto" id="gejala_penyakit" name="gejala_penyakit"> --}}
               </div>
           </div>
           <div class="modal-footer">
@@ -112,7 +149,7 @@
 
     @if (Auth::check() && Auth::user()->role_id == 1)
     <div class="co modal-xl modal-dialog-centeredntainer">
-      <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal2">Tambah Data</a>
+      <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal3">Tambah Data</a>
     </div>
     @endif
 

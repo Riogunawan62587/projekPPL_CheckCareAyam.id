@@ -17,6 +17,7 @@
           <th>Email</th>
           <th>Role</th>
           <th>Status Akun</th>
+          <th>Surat Ijin Usaha</th>
           <th>Aksi</th>
         </tr>
       </thead>
@@ -54,13 +55,15 @@
 
         {{-- Tabel --}}
         <tr>
-          <td>{{ ++$no }}</td>
-          <td>{{ $pengguna->nama }}</td>
-          <td>{{ $pengguna->username }}</td>
-          <td>{{ $pengguna->email }}</td>
-          <td>{{ $pengguna->role_id }}</td>
-          <td>{{ $pengguna->status_akun }}</td>
-          <td>
+          <td style="text-align: center; vertical-align: middle;">{{ ++$no }}</td>
+          <td style="text-align: center; vertical-align: middle;">{{ $pengguna->nama }}</td>
+          <td style="text-align: center; vertical-align: middle;">{{ $pengguna->username }}</td>
+          <td style="text-align: center; vertical-align: middle;">{{ $pengguna->email }}</td>
+          <td style="text-align: center; vertical-align: middle;">{{ $pengguna->role_id }}</td>
+          <td style="text-align: center; vertical-align: middle;">{{ $pengguna->status_akun }}</td>
+          <td style="text-align: center; vertical-align: middle;"><img src="{{ asset($pengguna->surat_ijin_usaha) }}"
+              alt="" style="width: 100px"></td>
+          <td style="text-align: center; vertical-align: middle;">
             <button class="btn btn-sm btn-ubah text-white" data-toggle="modal"
               data-target="#exampleModal{{$pengguna->id}}">Ubah
               Status</button>
@@ -76,9 +79,13 @@
         @endforeach
       </tbody>
     </table>
-    <div class="jumlah_pengguna">
-      <strong>Jumlah Pengguna : {{ $jumlah_user }}</strong>
+    <div class=" container row justify-content-between">
+      <div class="jumlah_pengguna d-inline-flex">
+        <strong>Jumlah Pengguna : {{ $jumlah_user }}</strong>
+      </div>
+      <div class="d-inline-flex">{{ $user->links() }}</div>
     </div>
+
     <hr>
     <a class="vtn btn-success btn-sm" href="{{ route('user.create') }}">Tambah Pengguna</a>
   </div>

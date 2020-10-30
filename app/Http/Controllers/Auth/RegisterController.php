@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Str;
+use File;
 
 class RegisterController extends Controller
 {
@@ -63,6 +65,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $namafile = time() . '.' . $data['surat_ijin_usaha']->getClientOriginalExtension();
+
         return User::create([
             'role_id' => 2,
             'username' => $data['username'],
@@ -74,6 +78,11 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'jenis_kelamin' => $data['jenis_kelamin'],
             'status_akun' => 'Belum Terverifikasi',
+            'nama_peternakan' => $data['nama_peternakan'],
+            'alamat_peternakan' => $data['alamat_peternakan'],
+            'tanggal_terbentuk' => $data['tanggal_terbentuk'],
+            'visi' => $data['visi'],
+            'surat_ijin_usaha' => $data['surat_ijin_usaha']->move('img/', $namafile),
         ]);
     }
 }

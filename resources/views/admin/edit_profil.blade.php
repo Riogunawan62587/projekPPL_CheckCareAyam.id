@@ -7,7 +7,7 @@
 <div class="jumbotronedit">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header">{{ __('Edit Data') }}</div>
 
@@ -15,143 +15,218 @@
             <form method="POST" action="{{ route('home.update', $user->id) }}">
               @csrf
 
-              <div class="form-group row">
-                <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
+              <div class="row align-items-center">
 
-                <div class="col-md-6">
-                  <input id="username" type="text" class="form-control @error('username') is-invalid @enderror"
-                    name="username" value="{{ ($user->username) }}" required autocomplete="username" autofocus>
+                {{-- container kiri --}}
+                <div class="container col-6">
+                  <div class="form-group row">
+                    <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
-                  @error('username')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
+                    <div class="col-md-6">
+                      <input id="username" type="text" class="form-control @error('username') is-invalid @enderror"
+                        name="username" value="{{ ($user->username) }}" required autocomplete="username" autofocus>
 
-              <div class="form-group row">
-                <label for="nama" class="col-md-4 col-form-label text-md-right">{{ __('Nama Lengkap') }}</label>
-
-                <div class="col-md-6">
-                  <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
-                    value="{{ ($user->nama) }}" required autocomplete="nama" autofocus>
-
-                  @error('nama')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label for="tanggal_lahir"
-                  class="col-md-4 col-form-label text-md-right">{{ __('Tanggal Lahir') }}</label>
-
-                <div class="col-md-6">
-                  <input id="tanggal_lahir" type="date"
-                    class="form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir"
-                    value="{{ ($user->tanggal_lahir) }}" required autocomplete="tanggal_lahir" autofocus>
-
-                  @error('tanggal_lahir')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label for="alamat" class="col-md-4 col-form-label text-md-right">{{ __('Alamat') }}</label>
-
-                <div class="col-md-6">
-                  <input id="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror"
-                    name="alamat" value="{{ ($user->alamat) }}" required autocomplete="alamat" autofocus>
-
-                  @error('alamat')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label for="no_telp" class="col-md-4 col-form-label text-md-right">{{ __('No Telp') }}</label>
-
-                <div class="col-md-6">
-                  <input id="no_telp" type="text" class="form-control @error('no_telp') is-invalid @enderror"
-                    name="no_telp" value="{{ ($user->no_telp) }}" required autocomplete="no_telp" autofocus>
-
-                  @error('no_telp')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label for="jenis_kelamin"
-                  class="col-md-4 col-form-label text-md-right">{{ __('Jenis Kelamin') }}</label>
-
-                <div class="col-md-6" style="margin-top: auto; margin-bottom: auto">
-                  <div class="col" style="display: inline">
-                    <input id="jenis_kelamin" type="radio" class=" @error('jenis_kelamin') is-invalid @enderror"
-                      name="jenis_kelamin" value="laki - laki" required> Laki
-                    - Laki
+                      @error('username')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
                   </div>
 
-                  <div class="col" style="display: inline">
-                    <input id="jenis_kelamin" type="Radio" class=" @error('jenis_kelamin') is-invalid @enderror"
-                      name="jenis_kelamin" value="perempuan" required> Perempuan
-                    @error('jenis_kelamin')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
+                  <div class="form-group row">
+                    <label for="nama" class="col-md-4 col-form-label text-md-right">{{ __('Nama Lengkap') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
+                        value="{{ ($user->nama) }}" required autocomplete="nama" autofocus>
+
+                      @error('nama')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="tanggal_lahir"
+                      class="col-md-4 col-form-label text-md-right">{{ __('Tanggal Lahir') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="tanggal_lahir" type="date"
+                        class="form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir"
+                        value="{{ ($user->tanggal_lahir) }}" required autocomplete="tanggal_lahir" autofocus>
+
+                      @error('tanggal_lahir')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="alamat" class="col-md-4 col-form-label text-md-right">{{ __('Alamat') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror"
+                        name="alamat" value="{{ ($user->alamat) }}" required autocomplete="alamat" autofocus>
+
+                      @error('alamat')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="no_telp" class="col-md-4 col-form-label text-md-right">{{ __('No Telp') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="no_telp" type="text" class="form-control @error('no_telp') is-invalid @enderror"
+                        name="no_telp" value="{{ ($user->no_telp) }}" required autocomplete="no_telp" autofocus>
+
+                      @error('no_telp')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="jenis_kelamin"
+                      class="col-md-4 col-form-label text-md-right">{{ __('Jenis Kelamin') }}</label>
+
+                    <div class="col-md-6" style="margin-top: auto; margin-bottom: auto">
+                      <div class="col" style="display: inline">
+                        <input id="jenis_kelamin" type="radio" class=" @error('jenis_kelamin') is-invalid @enderror"
+                          name="jenis_kelamin" value="laki - laki" required> Laki
+                        - Laki
+                      </div>
+
+                      <div class="col" style="display: inline">
+                        <input id="jenis_kelamin" type="Radio" class=" @error('jenis_kelamin') is-invalid @enderror"
+                          name="jenis_kelamin" value="perempuan" required> Perempuan
+                        @error('jenis_kelamin')
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                        name="email" value="{{ ($user->email) }}" required autocomplete="email">
+
+                      @error('email')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="form-group row">
-                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                {{-- container kanan --}}
+                <div class="container col-6">
+                  <div class="form-group row">
+                    <label for="nama_peternakan"
+                      class="col-md-4 col-form-label text-md-right">{{ __('Nama Peternakan') }}</label>
 
-                <div class="col-md-6">
-                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                    value="{{ ($user->email) }}" required autocomplete="email">
+                    <div class="col-md-6">
+                      <input id="nama_peternakan" type="text"
+                        class="form-control @error('nama_peternakan') is-invalid @enderror" name="nama_peternakan"
+                        value="{{ ($user->nama_peternakan) }}" required autocomplete="nama_peternakan" autofocus>
 
-                  @error('email')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
+                      @error('nama_peternakan')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
+                  </div>
 
-              <div class="form-group row">
-                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                  <div class="form-group row">
+                    <label for="alamat_peternakan"
+                      class="col-md-4 col-form-label text-md-right">{{ __('Alamat Peternakan') }}</label>
 
-                <div class="col-md-6">
-                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                    name="password" required autocomplete="new-password">
+                    <div class="col-md-6">
+                      <input id="alamat_peternakan" type="text"
+                        class="form-control @error('alamat_peternakan') is-invalid @enderror" name="alamat_peternakan"
+                        value="{{ ($user->alamat_peternakan) }}" required autocomplete="alamat_peternakan" autofocus>
 
-                  @error('password')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
+                      @error('alamat_peternakan')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
+                  </div>
 
-              <div class="form-group row">
-                <label for="password-confirm"
-                  class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                  <div class="form-group row">
+                    <label for="tanggal_terbentuk"
+                      class="col-md-4 col-form-label text-md-right">{{ __('Tanggal Terbentuk') }}</label>
 
-                <div class="col-md-6">
-                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
-                    required autocomplete="new-password">
+                    <div class="col-md-6">
+                      <input id="tanggal_terbentuk" type="date"
+                        class="form-control @error('tanggal_terbentuk') is-invalid @enderror" name="tanggal_terbentuk"
+                        value="{{ ($user->tanggal_terbentuk) }}" required autocomplete="tanggal_terbentuk" autofocus>
+
+                      @error('tanggal_terbentuk')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="visi" class="col-md-4 col-form-label text-md-right">{{ __('Visi') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="visi" type="text" class="form-control @error('alamat') is-invalid @enderror"
+                        name="visi" value="{{ ($user->visi) }}" required autocomplete="visi" autofocus>
+
+                      @error('visi')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                        name="password" required autocomplete="new-password">
+
+                      @error('password')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="password-confirm"
+                      class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
+                        required autocomplete="new-password">
+                    </div>
+                  </div>
                 </div>
               </div>
 

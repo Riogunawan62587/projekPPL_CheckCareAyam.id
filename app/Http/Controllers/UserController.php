@@ -19,7 +19,7 @@ class UserController extends Controller
     public function index()
     {
         $batas = 5;
-        $user = User::all()->sortByDesc('id');
+        $user = User::orderBy('id')->paginate($batas);
         $no = 0;
         $jumlah_user = $user->count();
         // ->paginate($batas);
@@ -83,6 +83,10 @@ class UserController extends Controller
         $user->no_telp            = $request->no_telp;
         $user->email              = $request->email;
         $user->jenis_kelamin      = $request->jenis_kelamin;
+        $user->nama_peternakan    = $request->nama_peternakan;
+        $user->alamat_peternakan  = $request->alamat_peternakan;
+        $user->tanggal_terbentuk  = $request->tanggal_terbentuk;
+        $user->visi               = $request->visi;
         $user->update();
         return redirect('/user');
     }

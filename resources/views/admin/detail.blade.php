@@ -39,14 +39,34 @@
               <th scope="row">Jenis Kelamin :</th>
               <td>{{ $user->jenis_kelamin }}</td>
             </tr>
-            <tr class="float-left">
-              <div class="container text-white grp">
-                <td><a href="/user" class="btn btn-dark text-white">Kembali</a></td>
-                <td><a href="{{ route('user.edit', $user->id) }}" class="btn btn-info text-white">Edit</a></td>
-              </div>
+            <tr>
+              <th scope="row">Nama Peternakan :</th>
+              <td>{{ $user->nama_peternakan }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Alamat Peternakan :</th>
+              <td>{{ $user->alamat_peternakan }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Tanggal Terbentuk :</th>
+              <td>{{ $user->tanggal_terbentuk }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Visi :</th>
+              <td>{{ $user->visi }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Surat Ijin Usaha :</th>
+              <td style="vertical-align: middle;"><img src="{{ asset($user->surat_ijin_usaha) }}" alt=""
+                  style="width: 500px"></td>
             </tr>
           </tbody>
         </table>
+        <hr>
+        <div class="container text-white grp">
+          <td><a href="/user" class="btn btn-dark text-white">Kembali</a></td>
+          <td><a href="{{ route('user.edit', $user->id) }}" class="btn btn-info text-white">Edit</a></td>
+        </div>
       </div>
     </div>
   </div>

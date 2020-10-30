@@ -61,6 +61,10 @@ class HomeController extends Controller
         $user->no_telp            = $request->no_telp;
         $user->email              = $request->email;
         $user->jenis_kelamin      = $request->jenis_kelamin;
+        $user->nama_peternakan    = $request->nama_peternakan;
+        $user->alamat_peternakan  = $request->alamat_peternakan;
+        $user->tanggal_terbentuk  = $request->tanggal_terbentuk;
+        $user->visi               = $request->visi;
         $user->update();
         return redirect('/home.profil_saya');
     }

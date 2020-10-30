@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('nama', 50);
             $table->date('tanggal_lahir');
             $table->string('alamat', 100);
-            $table->string('no_telp', 15)->unique();
+            $table->string('no_telp', 15);
             $table->string('email', 30)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('jenis_kelamin', ['laki - laki', 'perempuan']);

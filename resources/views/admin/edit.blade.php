@@ -101,21 +101,39 @@
                       class="col-md-4 col-form-label text-md-right">{{ __('Jenis Kelamin') }}</label>
 
                     <div class="col-md-6" style="margin-top: auto; margin-bottom: auto">
+                      @if ($user->jenis_kelamin == 'laki - laki')
                       <div class="col" style="display: inline">
                         <input id="jenis_kelamin" type="radio" class=" @error('jenis_kelamin') is-invalid @enderror"
-                          name="jenis_kelamin" value="laki - laki" required> Laki
-                        - Laki
+                          name="jenis_kelamin" value="laki - laki" checked> Laki- Laki
                       </div>
+                      @else
+                      <div class="col" style="display: inline">
+                        <input id="jenis_kelamin" type="radio" class=" @error('jenis_kelamin') is-invalid @enderror"
+                          name="jenis_kelamin" value="laki - laki"> Laki- Laki
+                      </div>
+                      @endif
 
+                      @if ($user->jenis_kelamin == 'perempuan')
                       <div class="col" style="display: inline">
                         <input id="jenis_kelamin" type="Radio" class=" @error('jenis_kelamin') is-invalid @enderror"
-                          name="jenis_kelamin" value="perempuan" required> Perempuan
+                          name="jenis_kelamin" value="perempuan" checked> Perempuan
                         @error('jenis_kelamin')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
                         </span>
                         @enderror
                       </div>
+                      @else
+                      <div class="col" style="display: inline">
+                        <input id="jenis_kelamin" type="Radio" class=" @error('jenis_kelamin') is-invalid @enderror"
+                          name="jenis_kelamin" value="perempuan"> Perempuan
+                        @error('jenis_kelamin')
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                      </div>
+                      @endif
                     </div>
                   </div>
 
@@ -234,7 +252,7 @@
                   <button type="submit" class="btn btn-primary">
                     {{ __('Update') }}
                   </button>
-                  <a href="/user" class="btn btn-danger">Batal</a>
+                  <a href="{{ route('user.detail', $user->id)}}" class="btn btn-danger">Batal</a>
                 </div>
               </div>
 

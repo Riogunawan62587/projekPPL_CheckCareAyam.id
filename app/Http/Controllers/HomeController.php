@@ -35,15 +35,6 @@ class HomeController extends Controller
         return view('admin.profil_saya', compact('user'));
     }
 
-    protected function validator(Request $request)
-    {
-        return Validator::make($request, [
-            'username' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
-
     public function edit($id)
     {
         $user = User::find($id);
@@ -52,6 +43,13 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
+
+        $this->validate($request, [
+            'username' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
         $user = User::find($id);
         $user->username           = $request->username;
         $user->password           = Hash::make($request->password);
@@ -66,6 +64,6 @@ class HomeController extends Controller
         $user->tanggal_terbentuk  = $request->tanggal_terbentuk;
         $user->visi               = $request->visi;
         $user->update();
-        return redirect('/home.profil_saya');
+        return redirect('home/profil_saya/' . $id);
     }
 }

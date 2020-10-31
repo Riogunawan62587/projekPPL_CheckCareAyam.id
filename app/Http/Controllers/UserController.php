@@ -20,20 +20,10 @@ class UserController extends Controller
     {
         $batas = 5;
         $user = User::orderBy('id')->paginate($batas);
-        $no = 0;
+        $no = $batas * ($user->currentPage() - 1);
         $jumlah_user = $user->count();
-        // ->paginate($batas);
-        // $no = $batas * ($user->currentPage() - 1);
+        $no = $batas * ($user->currentPage() - 1);
         return view('admin.manaj_user', compact('user', 'no', 'jumlah_user'));
-    }
-
-    protected function validator(Request $request)
-    {
-        return Validator::make($request, [
-            'username' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
     }
 
     public function create()
@@ -45,6 +35,13 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'username' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
         $user = new User;
         $user->role_id            = 1;
         $user->username           = $request->username;
@@ -74,6 +71,13 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+
+        $this->validate($request, [
+            'username' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
         $user = User::find($id);
         $user->username           = $request->username;
         $user->password           = Hash::make($request->password);

@@ -147,11 +147,11 @@
       </div>
     </div>
 
-    @if (Auth::check() && Auth::user()->role_id == 1)
+    {{-- @if (Auth::check() && Auth::user()->role_id == 1) --}}
     <div class="co modal-xl modal-dialog-centeredntainer">
       <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal3">Tambah Data</a>
     </div>
-    @endif
+    {{-- @endif --}}
 
   </div>
 </div>

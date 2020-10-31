@@ -14,11 +14,11 @@ class AddPeternakanColumn extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('nama_peternakan');
-            $table->string('alamat_peternakan');
-            $table->date('tanggal_terbentuk');
-            $table->string('visi');
-            $table->string('surat_ijin_usaha');
+            $table->string('nama_peternakan')->nullable();
+            $table->string('alamat_peternakan')->nullable();
+            $table->date('tanggal_terbentuk')->nullable();
+            $table->string('visi')->nullable();
+            $table->string('surat_ijin_usaha')->nullable();
         });
     }
 

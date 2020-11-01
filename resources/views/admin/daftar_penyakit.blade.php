@@ -62,19 +62,17 @@
                 <div class="form-group">
                   <label for="nama_penyakit">Nama Penyakit</label>
                   <input type="text" class="form-control m-auto" id="nama_penyakit" name="nama_penyakit"
-                    value="{{ $daftar->nama_penyakit }}">
+                    value="{{ $daftar->nama_penyakit }}" required>
                 </div>
                 <div class="form-group">
                   <label for="penyebab_penyakit">Penyebab Penyakit</label>
                   <input type="text" class="form-control m-auto" id="penyebab_penyakit" name="penyebab_penyakit"
-                    value="{{ $daftar->penyebab_penyakit }}">
+                    value="{{ $daftar->penyebab_penyakit }}" required>
                 </div>
                 <div class="form-group">
                   <label for="gejala_penyakit">Gejala Penyakit</label>
-                  <textarea name="gejala_penyakit" id="gejala_penyakit" cols="30" rows="6"
-                    class="form-control m-auto">{{ $daftar->gejala_penyakit }}</textarea>
-                  {{-- <input type="text-area" class="form-control m-auto" id="gejala_penyakit" name="gejala_penyakit"
-                    value="{{ $daftar->gejala_penyakit }}"> --}}
+                  <textarea name="gejala_penyakit" id="gejala_penyakit" cols="30" rows="6" class="form-control m-auto"
+                    required>{{ $daftar->gejala_penyakit }}</textarea>
                 </div>
             </div>
             <div class="modal-footer">
@@ -101,8 +99,10 @@
             <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1{{ $daftar->id }}">Lihat
               Lebih
               Lengkap</button>
+            @if (Auth::check() && Auth::user()->role_id == 1)
             <button class="btn btn-success" data-toggle="modal"
               data-target="#exampleModal2{{ $daftar->id }}">Edit</button>
+            @endif
           </div>
         </div>
       </div>
@@ -125,17 +125,16 @@
               @csrf
               <div class="form-group">
                 <label for="nama_penyakit">Nama Penyakit</label>
-                <input type="text" class="form-control m-auto" id="nama_penyakit" name="nama_penyakit">
+                <input type="text" class="form-control m-auto" id="nama_penyakit" name="nama_penyakit" required>
               </div>
               <div class="form-group">
                 <label for="penyebab_penyakit">Penyebab Penyakit</label>
-                <input type="text" class="form-control m-auto" id="penyebab_penyakit" name="penyebab_penyakit">
+                <input type="text" class="form-control m-auto" id="penyebab_penyakit" name="penyebab_penyakit" required>
               </div>
               <div class="form-group">
                 <label for="gejala_penyakit">Gejala Penyakit</label>
-                <textarea name="gejala_penyakit" id="gejala_penyakit" cols="30" rows="6"
-                  class="form-control m-auto"></textarea>
-                {{-- <input type="text" class="form-control m-auto" id="gejala_penyakit" name="gejala_penyakit"> --}}
+                <textarea name="gejala_penyakit" id="gejala_penyakit" cols="30" rows="6" class="form-control m-auto"
+                  required></textarea>
               </div>
           </div>
           <div class="modal-footer">
@@ -147,11 +146,11 @@
       </div>
     </div>
 
-    {{-- @if (Auth::check() && Auth::user()->role_id == 1) --}}
+    @if (Auth::check() && Auth::user()->role_id == 1)
     <div class="co modal-xl modal-dialog-centeredntainer">
       <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal3">Tambah Data</a>
     </div>
-    {{-- @endif --}}
+    @endif
 
   </div>
 </div>

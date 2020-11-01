@@ -39,7 +39,7 @@
                 <form action="{{ route('user.simpan_status', $pengguna->id) }}" method="POST">
                   @csrf
                   <select class="custom-select" name="status_akun" required>
-                    <option selected>--</option>
+                    <option value="">--</option>
                     <option value="Terverifikasi">Terverifikasi</option>
                     <option value="Belum Terverifikasi">Belum Terverifikasi</option>
                   </select>

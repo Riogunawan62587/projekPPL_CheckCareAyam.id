@@ -39,6 +39,7 @@
               <th scope="row">Jenis Kelamin :</th>
               <td>{{ $user->jenis_kelamin }}</td>
             </tr>
+            @if ($user->role_id == 2)
             <tr>
               <th scope="row">Nama Peternakan :</th>
               <td>{{ $user->nama_peternakan }}</td>
@@ -60,6 +61,7 @@
               <td style="vertical-align: middle;"><img src="{{ asset($user->surat_ijin_usaha) }}" alt=""
                   style="width: 500px"></td>
             </tr>
+            @endif
           </tbody>
         </table>
         <hr>

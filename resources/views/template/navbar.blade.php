@@ -13,6 +13,12 @@
         @if (Auth::check() && Auth::user()->role_id == 1 || Auth::user()->role_id == 2 && Auth::user()->status_akun ==
         'Terverifikasi')
         <li class="nav-item px-2">
+          <a href="/rekomendasi_pakan" class="nav-link">Rekomendasi Pakan Ayam Peternak</a>
+        </li>
+        @endif
+        @if (Auth::check() && Auth::user()->role_id == 1 || Auth::user()->role_id == 2 && Auth::user()->status_akun ==
+        'Terverifikasi')
+        <li class="nav-item px-2">
           <a href="/daftar_penyakit" class="nav-link">Informasi Penyakit</a>
         </li>
         @endif

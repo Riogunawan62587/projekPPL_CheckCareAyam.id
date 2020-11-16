@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <h1>halo halo</h1>
+  <h1>Selamat anda telah terverifikasi</h1>
 </body>
 
 </html>

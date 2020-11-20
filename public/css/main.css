@@ -486,6 +486,26 @@ footer {
   margin-bottom: 20px;
 }
 
+/* Ayam Sehat Perhitungan */
+.isi {
+  color: coral;
+}
+
+.container .hitung {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  text-align: center;
+  width: 600px;
+  height: 630px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+  font-family: 'Viga', sans-serif;
+}
+
+.input_hitung {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 /* Ayam Sehat Hasil */
 .jumbotron-hasil {
   background-color: rgba(0, 0, 0, 0.76);
@@ -532,6 +552,10 @@ footer {
   box-shadow: 7px 7px 5px grey;
 }
 
+.row1 h3 {
+  color: coral;
+}
+
 .row-garis {
   height: 80px;
   width: 2px;
@@ -551,8 +575,4 @@ footer {
 
 .content-kanan {
   margin-left: -25px;
-}
-
-.row1 h3 {
-  color: black;
 }

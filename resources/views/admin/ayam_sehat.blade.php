@@ -14,7 +14,7 @@
           </div>
           <div class="container as" style="background-color: white">
             <div class="text-center">
-              <form method="POST" action="{{ route('rekomendasi.sehat_hasil') }}">
+              <form method="POST" action="{{ route('rekomendasi.sehat_perhitungan') }}">
                 @csrf
                 <div class="container clgn">
                   <h3 class="lgn">REKOMENDASI PAKAN AYAM SEHAT</h3>
@@ -22,7 +22,7 @@
 
                 <div class="form-group text-center spnemail">
                   <div class="row">
-                    <label for="jumlah" class="col">{{ __('Jumlah Ayam per kandang') }}</label>
+                    <label for="jumlah" class="col">{{ __('Jumlah Ayam per kandang (ekor)') }}</label>
                   </div>
 
                   <div class="row text-center">
@@ -42,7 +42,7 @@
 
                 <div class="form-group text-center spnemail">
                   <div class="row">
-                    <label for="usia" class="col">{{ __('Usia rata - rata') }}</label>
+                    <label for="usia" class="col">{{ __('Usia rata - rata (bulan)') }}</label>
                   </div>
 
                   <div class="row text-center">
@@ -62,7 +62,7 @@
 
                 <div class="form-group border-0 text-center spnpassword">
                   <div class="row">
-                    <label for="bobot" class="col">{{ __('Bobot rata - rata') }}</label>
+                    <label for="bobot" class="col">{{ __('Bobot rata - rata (gr)') }}</label>
                   </div>
 
                   <div class="row text-center">

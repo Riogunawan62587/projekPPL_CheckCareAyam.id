@@ -39,5 +39,7 @@ Route::post('/daftar_penyakit/update_penyakit/{id}', 'Disease_listController@upd
 
 Route::get('/rekomendasi_pakan', 'Food_recommendedController@index')->name('rekomendasi.menu');
 Route::get('/ayam_sehat', 'Food_recommendedController@ayam_sehat')->name('rekomendasi.sehat');
+Route::post('/ayam_sehat/perhitungan', 'Food_recommendedController@ayam_sehat_perhitungan')->name('rekomendasi.sehat_perhitungan');
 Route::post('/ayam_sehat/hasil', 'Food_recommendedController@ayam_sehat_hasil')->name('rekomendasi.sehat_hasil');
 Route::get('/ayam_sakit', 'Food_recommendedController@ayam_sakit');
+Route::get('/ayam_sakit/delete', 'Food_recommendedController@destroy')->name('rekomendasi.sehat_hapus');

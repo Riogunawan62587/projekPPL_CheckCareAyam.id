@@ -10,18 +10,18 @@
       <div class="col-5 p-0 ml-3 mb-3">
         <div class="container">
           <div class="row1 d-lg-block mt-4 pt-3">
-            <h3>Tes</h3>
+            <h3>{{ $jumlah }} ekor</h3>
           </div>
           <div class="row1 d-lg-block mt-4 pt-3">
-            <h3>Tes</h3>
+            <h3>{{ $usia }} minggu</h3>
           </div>
           <div class="row1 d-lg-block mt-4 pt-3">
-            <h3>Tes</h3>
+            <h3>{{ $bobot }} gr</h3>
           </div>
           <div class="row d-lg-block mt-5">
             <h3 class="text">Keseragaman Pangan :</h3>
-            <h1>100%</h1>
-            <a href="{{ route('rekomendasi.menu') }}" class="btn btn-success mt-1">Masukkan Ulang Data</a>
+            <h1>{{ $keseragaman }}%</h1>
+            <a href="{{ route('rekomendasi.sehat_hapus') }}" class="btn btn-success mt-1">Masukkan Ulang Data</a>
           </div>
         </div>
       </div>

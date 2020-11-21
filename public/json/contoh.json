@@ -4,5 +4,17 @@
         "jumlah": "20",
         "usia": "1",
         "bobot": "5"
+    },
+    {
+        "id": 111,
+        "jumlah": "20",
+        "usia": "2",
+        "bobot": "5"
+    },
+    {
+        "id": 128,
+        "jumlah": "20",
+        "usia": "3",
+        "bobot": "5"
     }
 ]

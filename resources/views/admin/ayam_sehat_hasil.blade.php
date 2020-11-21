@@ -4,24 +4,32 @@
 
 @section('content')
 
+<?php 
+  if ($keseragaman >= 80) {
+    $status = 'Baik';
+  } else {
+    $status = 'Tidak Baik';
+  } 
+?>
+
 <div class="jumbotron-ayam-sehat">
   <div class="jumbotron-form align-items-center">
     <div class="container-hasil mx-auto text-center align-items-center">
       <div class="col-5 p-0 ml-3 mb-3">
         <div class="container">
           <div class="row1 d-lg-block mt-4 pt-3">
-            <h3>{{ $jumlah }} ekor</h3>
+            <h3>{{ $jumlah_ayam }} ekor</h3>
           </div>
           <div class="row1 d-lg-block mt-4 pt-3">
-            <h3>{{ $usia }} minggu</h3>
+            <h3>{{ $usia_ayam }} minggu</h3>
           </div>
           <div class="row1 d-lg-block mt-4 pt-3">
-            <h3>{{ $bobot }} gr</h3>
+            <h3>{{ $bobot_ratarata }} gr</h3>
           </div>
           <div class="row d-lg-block mt-5">
             <h3 class="text">Keseragaman Pangan :</h3>
             <h1>{{ $keseragaman }}%</h1>
-            <a href="{{ route('rekomendasi.sehat_hapus') }}" class="btn btn-success mt-1">Masukkan Ulang Data</a>
+            <a href="{{ route('rekomendasi.sehat') }}" class="btn btn-success mt-1">Masukkan Ulang Data</a>
           </div>
         </div>
       </div>
@@ -34,33 +42,12 @@
         <div class="container content-kanan">
           <h1>Rekomendasi Pakan</h1>
           <img src="{{ asset('/img/ayam_sehat.png') }}" style="width: 250px">
-          <div class="container mt-5 d-inline-flex">
-            <div class="col-5">
-              <div class="row justify-content-end">
-                <h5>Protein : 5gr</h5>
-              </div>
-              <div class="row justify-content-end">
-                <h5>Karbohidrat : 10gr</h5>
-              </div>
-              <div class="row justify-content-end">
-                <h5>Karbohidrat : 10gr</h5>
-              </div>
+          <div class="container mt-5">
+            <div class="row justify-content-center">
+              <h4>Nilai Keseragaman Pakan : </h4>
             </div>
-            <div class="col-2">
-              <div class="row justify-content-center">
-                <div class="row-garis"></div>
-              </div>
-            </div>
-            <div class="col-5">
-              <div class="row justify-content-start">
-                <h5>Protein : 5gr</h5>
-              </div>
-              <div class="row justify-content-start">
-                <h5>Karbohidrat : 10gr</h5>
-              </div>
-              <div class="row justify-content-start">
-                <h5>Karbohidrat : 10gr</h5>
-              </div>
+            <div class="row justify-content-center">
+              <h4><b>{{ $status }}</b></h4>
             </div>
           </div>
         </div>

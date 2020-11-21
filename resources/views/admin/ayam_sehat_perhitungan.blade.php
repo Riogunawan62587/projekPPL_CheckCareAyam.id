@@ -23,12 +23,12 @@
                 <div class="row">
                   <div class="col container isi text-black mt-3">
                     <h3><b>BOBOT :</b></h3>
-                    <h5>{{ $bobot }} gr</h5>
+                    <h5>{{ $data_kandang->bobot_ratarata }} gr</h5>
                   </div>
 
                   <div class="col container isi text-black mt-3">
                     <h3><b>USIA :</b></h3>
-                    <h5>{{ $usia }} bulan</h5>
+                    <h5>{{ $data_kandang->usia_ayam }} bulan</h5>
                   </div>
                 </div>
 

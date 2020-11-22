@@ -19,7 +19,7 @@ class AddDataKandangTable extends Migration
             $table->integer('usia_ayam');
             $table->double('bobot_ratarata');
             $table->string('kondisi_khusus', 100);
-            $table->integer('jumlah_pakan_perkandang');
+            $table->integer('jumlah_pakan_perkandang')->nullable();
         });
     }
 

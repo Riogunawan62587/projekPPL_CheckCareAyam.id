@@ -127,6 +127,6 @@ class Food_recommendedController extends Controller
         $rekomendasi_komposisi->rekomendasi_komposisi   = $status;
         $rekomendasi_komposisi->save();
 
-        return view('admin.ayam_sehat_hasil', compact('jumlah_ayam', 'usia_ayam', 'bobot_ratarata', 'data_jagung', 'data_konsentrat', 'data_bekatul', 'keseragaman'));
+        return view('admin.ayam_sehat_hasil', compact('jumlah_ayam', 'usia_ayam', 'bobot_ratarata', 'jumlah_pakan_perkandang', 'data_jagung', 'data_konsentrat', 'data_bekatul', 'keseragaman'));
     }
 }

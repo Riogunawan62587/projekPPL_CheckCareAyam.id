@@ -29,10 +29,11 @@
             <p class="m-0">Bobot Rata - Rata</p>
             <h3><b>{{ $bobot_ratarata }} gr</b></h3>
           </div>
-          <div class="row d-lg-block mt-5">
-            <h3 class="text">Keseragaman Pangan :</h3>
-            <h1><b>{{ $keseragaman }}%</b></h1>
-            <a href="{{ route('rekomendasi.sehat') }}" class="btn btn-success mt-1">Masukkan Ulang Data</a>
+          <div class="row d-lg-block mt-4">
+            <h3 class="text">Keseragaman Bobot :</h3>
+            <h2><b>{{ $keseragaman }}%</b></h2>
+            <h4>Nilai Keseragaman Bobot : </h4>
+            <h2><b>{{ $status }}</b></h2>
           </div>
         </div>
       </div>
@@ -47,7 +48,7 @@
           <img src="{{ asset('/img/ayam_sehat.png') }}" style="width: 180px">
           <div class="container mt-3">
             <div class="row justify-content-center">
-              <h4>Rekomendasi Pakan :</h4>
+              <h4>Total Pakan : {{ $jumlah_pakan_perkandang }} gr</h4>
             </div>
             <div class="row justify-content-center">
               <div class="col mt-2">
@@ -70,10 +71,7 @@
               </div>
             </div>
             <div class="row justify-content-center mt-4">
-              <h4>Nilai Keseragaman Bobot : </h4>
-            </div>
-            <div class="row justify-content-center">
-              <h4><b>{{ $status }}</b></h4>
+              <a href="{{ route('rekomendasi.sehat') }}" class="btn btn-success mt-1">Masukkan Ulang Data</a>
             </div>
           </div>
         </div>

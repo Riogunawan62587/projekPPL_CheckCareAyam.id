@@ -42,7 +42,7 @@
 
                 <div class="form-group text-center spnemail">
                   <div class="row">
-                    <label for="usia" class="col">{{ __('Usia rata - rata (bulan)') }}</label>
+                    <label for="usia" class="col">{{ __('Usia (minggu)') }}</label>
                   </div>
 
                   <div class="row text-center">

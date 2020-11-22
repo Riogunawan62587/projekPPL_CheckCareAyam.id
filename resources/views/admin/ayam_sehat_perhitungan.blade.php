@@ -28,7 +28,7 @@
 
                   <div class="col container isi text-black mt-3">
                     <h3><b>USIA :</b></h3>
-                    <h5>{{ $data_kandang->usia_ayam }} bulan</h5>
+                    <h5>{{ $data_kandang->usia_ayam }} minggu</h5>
                   </div>
                 </div>
 

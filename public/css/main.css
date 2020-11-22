@@ -556,6 +556,10 @@ footer {
   color: coral;
 }
 
+.row1 p {
+  color: coral;
+}
+
 .row-garis {
   height: 80px;
   width: 2px;
@@ -567,6 +571,23 @@ footer {
   width: 5px;
   background-color: white;
   border-radius: 5px;
+}
+
+.row2 {
+  background-color: white;
+  height: 60px;
+  width: 100%;
+  display: block;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 7px 7px 5px grey;
+}
+
+.row2 h4 {
+  color: coral;
+}
+
+.row2 p {
+  color: coral;
 }
 
 .text {

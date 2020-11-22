@@ -10,6 +10,6 @@ class Data_kandang extends Model
     protected $table = 'data_kandang';
 
     protected $fillable = [
-        'jumlah_ayam', 'usia_ayam', 'bobot_ratarata', 'kondisi_khusus'
+        'jumlah_ayam', 'usia_ayam', 'bobot_ratarata', 'kondisi_khusus', 'jumlah_pakan_perkandang'
     ];
 }

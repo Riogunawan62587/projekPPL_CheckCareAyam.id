@@ -17,8 +17,9 @@ class AddDataKandangTable extends Migration
             $table->bigIncrements('id');
             $table->integer('jumlah_ayam');
             $table->integer('usia_ayam');
-            $table->integer('bobot_ratarata');
+            $table->double('bobot_ratarata');
             $table->string('kondisi_khusus', 100);
+            $table->integer('jumlah_pakan_perkandang');
         });
     }
 

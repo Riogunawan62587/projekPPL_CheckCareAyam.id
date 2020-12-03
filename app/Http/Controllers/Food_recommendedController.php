@@ -149,6 +149,8 @@ class Food_recommendedController extends Controller
 
     public function ayam_sakit_hasil(Request $request)
     {
+        $usia_ayam_sementara = 0;
+        $pakan_per_umur = 0;
         $data_kandang = Data_kandang::all();
         foreach ($data_kandang as $dt_kandang) {
             $kandang_id     = $dt_kandang->id;
@@ -158,37 +160,37 @@ class Food_recommendedController extends Controller
         }
 
         // Tabel Bobot
-        if ($bobot_ratarata >= 6 && $bobot_ratarata <= 7) {
+        if ($bobot_ratarata >= 6 && $bobot_ratarata <= 11) {
             $usia_ayam_sementara = 1;
-        } elseif ($bobot_ratarata >= 12 && $bobot_ratarata <= 13) {
+        } elseif ($bobot_ratarata >= 12 && $bobot_ratarata <= 17) {
             $usia_ayam_sementara = 2;
-        } elseif ($bobot_ratarata >= 18 && $bobot_ratarata <= 20) {
+        } elseif ($bobot_ratarata >= 18 && $bobot_ratarata <= 25) {
             $usia_ayam_sementara = 3;
-        } elseif ($bobot_ratarata >= 26 && $bobot_ratarata <= 27) {
+        } elseif ($bobot_ratarata >= 26 && $bobot_ratarata <= 34) {
             $usia_ayam_sementara = 4;
-        } elseif ($bobot_ratarata >= 35 && $bobot_ratarata <= 37) {
+        } elseif ($bobot_ratarata >= 35 && $bobot_ratarata <= 44) {
             $usia_ayam_sementara = 5;
-        } elseif ($bobot_ratarata >= 45 && $bobot_ratarata <= 47) {
+        } elseif ($bobot_ratarata >= 45 && $bobot_ratarata <= 53) {
             $usia_ayam_sementara = 6;
-        } elseif ($bobot_ratarata >= 54 && $bobot_ratarata <= 58) {
+        } elseif ($bobot_ratarata >= 54 && $bobot_ratarata <= 64) {
             $usia_ayam_sementara = 7;
-        } elseif ($bobot_ratarata >= 65 && $bobot_ratarata <= 69) {
+        } elseif ($bobot_ratarata >= 65 && $bobot_ratarata <= 75) {
             $usia_ayam_sementara = 8;
-        } elseif ($bobot_ratarata >= 76 && $bobot_ratarata <= 80) {
+        } elseif ($bobot_ratarata >= 76 && $bobot_ratarata <= 85) {
             $usia_ayam_sementara = 9;
-        } elseif ($bobot_ratarata >= 86 && $bobot_ratarata <= 92) {
+        } elseif ($bobot_ratarata >= 86 && $bobot_ratarata <= 95) {
             $usia_ayam_sementara = 10;
-        } elseif ($bobot_ratarata >= 96 && $bobot_ratarata <= 102) {
+        } elseif ($bobot_ratarata >= 96 && $bobot_ratarata <= 104) {
             $usia_ayam_sementara = 11;
-        } elseif ($bobot_ratarata >= 105 && $bobot_ratarata <= 111) {
+        } elseif ($bobot_ratarata >= 105 && $bobot_ratarata <= 112) {
             $usia_ayam_sementara = 12;
-        } elseif ($bobot_ratarata >= 113 && $bobot_ratarata <= 120) {
+        } elseif ($bobot_ratarata >= 113 && $bobot_ratarata <= 118) {
             $usia_ayam_sementara = 13;
-        } elseif ($bobot_ratarata >= 119 && $bobot_ratarata <= 127) {
+        } elseif ($bobot_ratarata >= 119 && $bobot_ratarata <= 125) {
             $usia_ayam_sementara = 14;
-        } elseif ($bobot_ratarata >= 126 && $bobot_ratarata <= 134) {
+        } elseif ($bobot_ratarata >= 126 && $bobot_ratarata <= 132) {
             $usia_ayam_sementara = 15;
-        } elseif ($bobot_ratarata >= 133 && $bobot_ratarata <= 141) {
+        } elseif ($bobot_ratarata >= 133 && $bobot_ratarata <= 139) {
             $usia_ayam_sementara = 16;
         } elseif ($bobot_ratarata >= 140 && $bobot_ratarata <= 148) {
             $usia_ayam_sementara = 17;
@@ -289,6 +291,6 @@ class Food_recommendedController extends Controller
         $rekomendasi_komposisi->rekomendasi_komposisi   = null;
         $rekomendasi_komposisi->save();
 
-        return view('admin.ayam_sakit_hasil', compact('usia_ayam', 'bobot_ratarata', 'pakan_per_umur', 'ciri_ciri', 'data_jagung', 'data_konsentrat', 'data_bekatul', 'vitamin', 'bobot_sebenarnya'));
+        return view('admin.ayam_sakit_hasil', compact('usia_ayam', 'bobot_ratarata', 'pakan_per_umur', 'ciri_ciri', 'data_jagung', 'data_konsentrat', 'data_bekatul', 'vitamin', 'usia_ayam_sementara', 'bobot_sebenarnya'));
     }
 }

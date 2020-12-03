@@ -129,4 +129,129 @@ class Food_recommendedController extends Controller
 
         return view('admin.ayam_sehat_hasil', compact('jumlah_ayam', 'usia_ayam', 'bobot_ratarata', 'jumlah_pakan_perkandang', 'data_jagung', 'data_konsentrat', 'data_bekatul', 'keseragaman'));
     }
+
+    public function ayam_sakit()
+    {
+        return view('admin.ayam_sakit');
+    }
+
+    public function ayam_sakit_perhitungan(Request $request)
+    {
+        $data_kandang = new Data_kandang;
+        $data_kandang->usia_ayam        = $request->usia;
+        $data_kandang->bobot_ratarata   = $request->bobot;
+        $data_kandang->ciri_ciri        = $request->ciri;
+        $data_kandang->kondisi_khusus   = 'Sakit';
+        $data_kandang->save();
+
+        return view('admin.ayam_sakit_perhitungan', compact('data_kandang'));
+    }
+
+    public function ayam_sakit_hasil(Request $request)
+    {
+        $data_kandang = Data_kandang::all();
+        foreach ($data_kandang as $dt_kandang) {
+            $kandang_id     = $dt_kandang->id;
+            $usia_ayam      = $dt_kandang->usia_ayam;
+            $bobot_ratarata = $dt_kandang->bobot_ratarata;
+            $ciri_ciri      = $dt_kandang->ciri_ciri;
+        }
+
+        // Tabel Bobot
+        if ($bobot_ratarata >= 6 && $bobot_ratarata <= 7) {
+            $usia_ayam = 1;
+        } elseif ($bobot_ratarata >= 12 && $bobot_ratarata <= 13) {
+            $usia_ayam = 2;
+        } elseif ($bobot_ratarata >= 18 && $bobot_ratarata <= 20) {
+            $usia_ayam = 3;
+        } elseif ($bobot_ratarata >= 26 && $bobot_ratarata <= 27) {
+            $usia_ayam = 4;
+        } elseif ($bobot_ratarata >= 35 && $bobot_ratarata <= 37) {
+            $usia_ayam = 5;
+        } elseif ($bobot_ratarata >= 45 && $bobot_ratarata <= 47) {
+            $usia_ayam = 6;
+        } elseif ($bobot_ratarata >= 54 && $bobot_ratarata <= 58) {
+            $usia_ayam = 7;
+        } elseif ($bobot_ratarata >= 65 && $bobot_ratarata <= 69) {
+            $usia_ayam = 8;
+        } elseif ($bobot_ratarata >= 76 && $bobot_ratarata <= 80) {
+            $usia_ayam = 9;
+        } elseif ($bobot_ratarata >= 86 && $bobot_ratarata <= 92) {
+            $usia_ayam = 10;
+        } elseif ($bobot_ratarata >= 96 && $bobot_ratarata <= 102) {
+            $usia_ayam = 11;
+        } elseif ($bobot_ratarata >= 105 && $bobot_ratarata <= 111) {
+            $usia_ayam = 12;
+        } elseif ($bobot_ratarata >= 113 && $bobot_ratarata <= 120) {
+            $usia_ayam = 13;
+        } elseif ($bobot_ratarata >= 119 && $bobot_ratarata <= 127) {
+            $usia_ayam = 14;
+        } elseif ($bobot_ratarata >= 126 && $bobot_ratarata <= 134) {
+            $usia_ayam = 15;
+        } elseif ($bobot_ratarata >= 133 && $bobot_ratarata <= 141) {
+            $usia_ayam = 16;
+        } elseif ($bobot_ratarata >= 140 && $bobot_ratarata <= 148) {
+            $usia_ayam = 17;
+        }
+
+        // Tabel Umur
+        if ($usia_ayam == 1) {
+            $pakan_per_umur = 15;
+        } elseif ($usia_ayam == 2) {
+            $pakan_per_umur = 21;
+        } elseif ($usia_ayam == 3) {
+            $pakan_per_umur = 25;
+        } elseif ($usia_ayam == 4) {
+            $pakan_per_umur = 29;
+        } elseif ($usia_ayam == 5) {
+            $pakan_per_umur = 36;
+        } elseif ($usia_ayam == 6) {
+            $pakan_per_umur = 40;
+        } elseif ($usia_ayam == 7) {
+            $pakan_per_umur = 43;
+        } elseif ($usia_ayam == 8) {
+            $pakan_per_umur = 47;
+        } elseif ($usia_ayam == 9) {
+            $pakan_per_umur = 53;
+        } elseif ($usia_ayam == 10) {
+            $pakan_per_umur = 56;
+        } elseif ($usia_ayam == 11) {
+            $pakan_per_umur = 62;
+        } elseif ($usia_ayam == 12) {
+            $pakan_per_umur = 66;
+        } elseif ($usia_ayam == 13) {
+            $pakan_per_umur = 71;
+        } elseif ($usia_ayam == 14) {
+            $pakan_per_umur = 74;
+        } elseif ($usia_ayam == 15) {
+            $pakan_per_umur = 76;
+        } elseif ($usia_ayam == 16) {
+            $pakan_per_umur = 79;
+        } elseif ($usia_ayam == 17) {
+            $pakan_per_umur = 82;
+        }
+
+        // Tabel vitamin
+        if ($usia_ayam >= 1 && $usia_ayam <= 10) {
+            $vitamin = 1;
+        } elseif ($usia_ayam > 10) {
+            $vitamin = 2;
+        }
+
+        $data_kandang_update                            = Data_kandang::find($kandang_id);
+        $data_kandang_update->jumlah_pakan_perkandang   = $pakan_per_umur;
+        $data_kandang_update->update();
+
+        // Rekomendasi
+        $data_jagung        = 0.5 * $pakan_per_umur;
+        $data_konsentrat    = 0.35 * $pakan_per_umur;
+        $data_bekatul       = 0.15 * $pakan_per_umur;
+
+        $rekomendasi_komposisi = new Rekomendasi_komposisi;
+        $rekomendasi_komposisi->kandang_id              = $kandang_id;
+        $rekomendasi_komposisi->rekomendasi_komposisi   = null;
+        $rekomendasi_komposisi->save();
+
+        return view('admin.ayam_sakit_hasil', compact('usia_ayam', 'bobot_ratarata', 'pakan_per_umur', 'ciri_ciri', 'data_jagung', 'data_konsentrat', 'data_bekatul', 'vitamin'));
+    }
 }

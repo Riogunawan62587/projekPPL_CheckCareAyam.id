@@ -19,7 +19,7 @@
         <h1 class="mt-4">Ayam Sakit</h1>
         <img src="{{ asset('/img/ayam_sakit.png') }}" style="width: 300px">
         <div class="container mt-4">
-          <a href="#" class="btn btn-success btn-2">Klik Disini</a>
+          <a href="{{ route('rekomendasi.sakit') }}" class="btn btn-success btn-2">Klik Disini</a>
         </div>
       </div>
     </div>

@@ -108,7 +108,7 @@ class UserController extends Controller
         $user->status_akun   = $request->status_akun;
         $user->update();
 
-        // Mail::to($user)->send(new VerifiedMail($user));
+        Mail::to($user)->send(new VerifiedMail($user));
 
         return redirect('/user');
     }

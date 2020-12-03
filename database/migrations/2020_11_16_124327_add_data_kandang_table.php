@@ -15,7 +15,7 @@ class AddDataKandangTable extends Migration
     {
         Schema::create('data_kandang', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('jumlah_ayam');
+            $table->integer('jumlah_ayam')->nullable();
             $table->integer('usia_ayam');
             $table->double('bobot_ratarata');
             $table->string('kondisi_khusus', 100);

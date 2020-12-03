@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRekomendasikomposisiTable extends Migration
+class AddFieldCiriCiriTableDataKandang extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class AddRekomendasikomposisiTable extends Migration
      */
     public function up()
     {
-        Schema::create('rekomendasi_komposisi', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('kandang_id');
-            $table->enum('rekomendasi_komposisi', ['Baik', 'Tidak Baik'])->nullable();
+        Schema::table('data_kandang', function (Blueprint $table) {
+            $table->string('ciri_ciri')->nullable();
         });
     }
 
@@ -27,6 +25,6 @@ class AddRekomendasikomposisiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rekomendasi_komposisi');
+        //
     }
 }

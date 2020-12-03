@@ -425,8 +425,29 @@ footer {
   border-color: coral;
 }
 
-/* Ayam Sehat */
+/* Ayam Sehat & Sehat*/
 .jumbotron-ayam-sehat {
+  background-image: url('/img/2727.jpg');
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  font-family: 'Viga', sans-serif;
+}
+
+.jumbotron-ayam-sakit {
   background-image: url('/img/2727.jpg');
   background-size: cover;
   width: 100%;
@@ -481,12 +502,22 @@ footer {
   margin-bottom: -60px;
 }
 
+.logo-ayam-sakit img {
+  width: 60px;
+  margin-bottom: -60px;
+}
+
 .logo-ayam-sehat {
   margin-top: -20px;
   margin-bottom: 20px;
 }
 
-/* Ayam Sehat Perhitungan */
+.logo-ayam-sakit {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+/* Ayam Sehat & Sakit Perhitungan */
 .isi {
   color: coral;
 }
@@ -501,12 +532,22 @@ footer {
   font-family: 'Viga', sans-serif;
 }
 
+.container .hitungs {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  text-align: center;
+  width: 600px;
+  height: 400px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+  font-family: 'Viga', sans-serif;
+}
+
 .input_hitung {
   font-size: 20px;
   font-weight: bold;
 }
 
-/* Ayam Sehat Hasil */
+/* Ayam Sehat & Sakit Hasil */
 .jumbotron-hasil {
   background-color: rgba(0, 0, 0, 0.76);
   background-size: cover;
@@ -571,6 +612,14 @@ footer {
   width: 5px;
   background-color: white;
   border-radius: 5px;
+}
+
+.p1 {
+  margin-left: 15px;
+}
+
+.p2 {
+  margin-right: 15px;
 }
 
 .row2 {

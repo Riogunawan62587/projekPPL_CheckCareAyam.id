@@ -159,76 +159,113 @@ class Food_recommendedController extends Controller
 
         // Tabel Bobot
         if ($bobot_ratarata >= 6 && $bobot_ratarata <= 7) {
-            $usia_ayam = 1;
+            $usia_ayam_sementara = 1;
         } elseif ($bobot_ratarata >= 12 && $bobot_ratarata <= 13) {
-            $usia_ayam = 2;
+            $usia_ayam_sementara = 2;
         } elseif ($bobot_ratarata >= 18 && $bobot_ratarata <= 20) {
-            $usia_ayam = 3;
+            $usia_ayam_sementara = 3;
         } elseif ($bobot_ratarata >= 26 && $bobot_ratarata <= 27) {
-            $usia_ayam = 4;
+            $usia_ayam_sementara = 4;
         } elseif ($bobot_ratarata >= 35 && $bobot_ratarata <= 37) {
-            $usia_ayam = 5;
+            $usia_ayam_sementara = 5;
         } elseif ($bobot_ratarata >= 45 && $bobot_ratarata <= 47) {
-            $usia_ayam = 6;
+            $usia_ayam_sementara = 6;
         } elseif ($bobot_ratarata >= 54 && $bobot_ratarata <= 58) {
-            $usia_ayam = 7;
+            $usia_ayam_sementara = 7;
         } elseif ($bobot_ratarata >= 65 && $bobot_ratarata <= 69) {
-            $usia_ayam = 8;
+            $usia_ayam_sementara = 8;
         } elseif ($bobot_ratarata >= 76 && $bobot_ratarata <= 80) {
-            $usia_ayam = 9;
+            $usia_ayam_sementara = 9;
         } elseif ($bobot_ratarata >= 86 && $bobot_ratarata <= 92) {
-            $usia_ayam = 10;
+            $usia_ayam_sementara = 10;
         } elseif ($bobot_ratarata >= 96 && $bobot_ratarata <= 102) {
-            $usia_ayam = 11;
+            $usia_ayam_sementara = 11;
         } elseif ($bobot_ratarata >= 105 && $bobot_ratarata <= 111) {
-            $usia_ayam = 12;
+            $usia_ayam_sementara = 12;
         } elseif ($bobot_ratarata >= 113 && $bobot_ratarata <= 120) {
-            $usia_ayam = 13;
+            $usia_ayam_sementara = 13;
         } elseif ($bobot_ratarata >= 119 && $bobot_ratarata <= 127) {
-            $usia_ayam = 14;
+            $usia_ayam_sementara = 14;
         } elseif ($bobot_ratarata >= 126 && $bobot_ratarata <= 134) {
-            $usia_ayam = 15;
+            $usia_ayam_sementara = 15;
         } elseif ($bobot_ratarata >= 133 && $bobot_ratarata <= 141) {
-            $usia_ayam = 16;
+            $usia_ayam_sementara = 16;
         } elseif ($bobot_ratarata >= 140 && $bobot_ratarata <= 148) {
-            $usia_ayam = 17;
+            $usia_ayam_sementara = 17;
         }
 
         // Tabel Umur
-        if ($usia_ayam == 1) {
+        if ($usia_ayam_sementara == 1) {
             $pakan_per_umur = 15;
-        } elseif ($usia_ayam == 2) {
+        } elseif ($usia_ayam_sementara == 2) {
             $pakan_per_umur = 21;
-        } elseif ($usia_ayam == 3) {
+        } elseif ($usia_ayam_sementara == 3) {
             $pakan_per_umur = 25;
-        } elseif ($usia_ayam == 4) {
+        } elseif ($usia_ayam_sementara == 4) {
             $pakan_per_umur = 29;
-        } elseif ($usia_ayam == 5) {
+        } elseif ($usia_ayam_sementara == 5) {
             $pakan_per_umur = 36;
-        } elseif ($usia_ayam == 6) {
+        } elseif ($usia_ayam_sementara == 6) {
             $pakan_per_umur = 40;
-        } elseif ($usia_ayam == 7) {
+        } elseif ($usia_ayam_sementara == 7) {
             $pakan_per_umur = 43;
-        } elseif ($usia_ayam == 8) {
+        } elseif ($usia_ayam_sementara == 8) {
             $pakan_per_umur = 47;
-        } elseif ($usia_ayam == 9) {
+        } elseif ($usia_ayam_sementara == 9) {
             $pakan_per_umur = 53;
-        } elseif ($usia_ayam == 10) {
+        } elseif ($usia_ayam_sementara == 10) {
             $pakan_per_umur = 56;
-        } elseif ($usia_ayam == 11) {
+        } elseif ($usia_ayam_sementara == 11) {
             $pakan_per_umur = 62;
-        } elseif ($usia_ayam == 12) {
+        } elseif ($usia_ayam_sementara == 12) {
             $pakan_per_umur = 66;
-        } elseif ($usia_ayam == 13) {
+        } elseif ($usia_ayam_sementara == 13) {
             $pakan_per_umur = 71;
-        } elseif ($usia_ayam == 14) {
+        } elseif ($usia_ayam_sementara == 14) {
             $pakan_per_umur = 74;
-        } elseif ($usia_ayam == 15) {
+        } elseif ($usia_ayam_sementara == 15) {
             $pakan_per_umur = 76;
-        } elseif ($usia_ayam == 16) {
+        } elseif ($usia_ayam_sementara == 16) {
             $pakan_per_umur = 79;
-        } elseif ($usia_ayam == 17) {
+        } elseif ($usia_ayam_sementara == 17) {
             $pakan_per_umur = 82;
+        }
+
+        // Tabel Umur 2
+        if ($usia_ayam == 1) {
+            $bobot_sebenarnya = '6 - 7';
+        } elseif ($usia_ayam == 2) {
+            $bobot_sebenarnya = '12 - 13';
+        } elseif ($usia_ayam == 3) {
+            $bobot_sebenarnya = '18 - 20';
+        } elseif ($usia_ayam == 4) {
+            $bobot_sebenarnya = '26 - 27';
+        } elseif ($usia_ayam == 5) {
+            $bobot_sebenarnya = '35 - 37';
+        } elseif ($usia_ayam == 6) {
+            $bobot_sebenarnya = '45 - 47';
+        } elseif ($usia_ayam == 7) {
+            $bobot_sebenarnya = '54 - 58';
+        } elseif ($usia_ayam == 8) {
+            $bobot_sebenarnya = '65 - 69';
+        } elseif ($usia_ayam == 9) {
+            $bobot_sebenarnya = '76 - 80';
+        } elseif ($usia_ayam == 10) {
+            $bobot_sebenarnya = '86 - 92';
+        } elseif ($usia_ayam == 11) {
+            $bobot_sebenarnya = '96 - 102';
+        } elseif ($usia_ayam == 12) {
+            $bobot_sebenarnya = '105 - 111';
+        } elseif ($usia_ayam == 13) {
+            $bobot_sebenarnya = '113 - 120';
+        } elseif ($usia_ayam == 14) {
+            $bobot_sebenarnya = '119 - 127';
+        } elseif ($usia_ayam == 15) {
+            $bobot_sebenarnya = '126 - 134';
+        } elseif ($usia_ayam == 16) {
+            $bobot_sebenarnya = '133 - 141';
+        } elseif ($usia_ayam == 17) {
+            $bobot_sebenarnya = '140 - 148';
         }
 
         // Tabel vitamin
@@ -252,6 +289,6 @@ class Food_recommendedController extends Controller
         $rekomendasi_komposisi->rekomendasi_komposisi   = null;
         $rekomendasi_komposisi->save();
 
-        return view('admin.ayam_sakit_hasil', compact('usia_ayam', 'bobot_ratarata', 'pakan_per_umur', 'ciri_ciri', 'data_jagung', 'data_konsentrat', 'data_bekatul', 'vitamin'));
+        return view('admin.ayam_sakit_hasil', compact('usia_ayam', 'bobot_ratarata', 'pakan_per_umur', 'ciri_ciri', 'data_jagung', 'data_konsentrat', 'data_bekatul', 'vitamin', 'bobot_sebenarnya'));
     }
 }

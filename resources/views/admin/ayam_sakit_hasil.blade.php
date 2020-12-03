@@ -22,6 +22,10 @@
             <p class="m-0">Ciri - Ciri</p>
             <h3><b>{{ $ciri_ciri }}</b></h3>
           </div>
+          <div class="row1 d-lg-block mt-4 pt-1">
+            <p class="m-0">Bobot Ayam Normal (Sehat) di Umur {{ $usia_ayam }} minggu</p>
+            <h3><b>{{ $bobot_sebenarnya }} gr</b></h3>
+          </div>
           <div class="row justify-content-center mt-4">
             <a href="{{ route('rekomendasi.sakit') }}" class="btn btn-success mt-1">Masukkan Ulang Data</a>
           </div>

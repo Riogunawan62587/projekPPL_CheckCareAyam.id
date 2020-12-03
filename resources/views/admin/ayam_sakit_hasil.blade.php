@@ -8,6 +8,7 @@
   <div class="jumbotron-form align-items-center">
     <div class="container-hasil mx-auto text-center align-items-center">
       <div class="col-5 p-0 ml-3 mb-3">
+        <h1>Data Ayam</h1>
         <div class="container">
           <div class="row1 d-lg-block mt-4 pt-1">
             <p class="m-0">Usia Ayam</p>
@@ -62,7 +63,7 @@
             <div class="col mt-3">
               <div class="row2 d-lg-block pt-1">
                 <p class="m-0">Vitamin (VitaChick)</p>
-                <h4><b>{{ $vitamin }} gr</b></h4>
+                <h4><b>{{ $vitamin }} sendok makan</b></h4>
               </div>
             </div>
           </div>

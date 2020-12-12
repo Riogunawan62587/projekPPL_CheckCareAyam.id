@@ -250,7 +250,7 @@ footer {
 
 /* Daftar Penyakit */
 .jumbotron-daftar_penyakit {
-  background-image: url('/img/2727.jpg');
+  background-image: url('/img/8360.jpg');
   background-size: cover;
   width: 100%;
   min-height: 100vh;
@@ -645,4 +645,65 @@ footer {
 
 .content-kanan {
   margin-left: -25px;
+}
+
+/* Harga Telur */
+.jumbotron-harga_telur {
+  background-image: url('/img/telur.jpg');
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  font-family: 'Viga', sans-serif;
+}
+
+.garis {
+  background-color: white;
+}
+
+.garis2 {
+  background-color: black;
+}
+
+.jumbotron-daftar_telur {
+  background-color: rgba(255, 255, 255, 0.301);
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  justify-content: center;
+  padding: 1rem;
+  color: white;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.cd {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.cd1 {
+  margin: 10px -10px 10px 10px;
+}
+
+.table {
+  color: black;
 }

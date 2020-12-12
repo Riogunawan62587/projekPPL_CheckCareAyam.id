@@ -22,6 +22,12 @@
           <a href="/daftar_penyakit" class="nav-link">Informasi Penyakit</a>
         </li>
         @endif
+        @if (Auth::check() && Auth::user()->role_id == 1 || Auth::user()->role_id == 2 && Auth::user()->status_akun ==
+        'Terverifikasi')
+        <li class="nav-item px-2">
+          <a href="/harga_telur" class="nav-link">Harga Telur</a>
+        </li>
+        @endif
         @if (Auth::check() && Auth::user()->role_id == 1)
         <li class="nav-item px-2">
           <a href="/user" class="nav-link">Manajemen User</a>

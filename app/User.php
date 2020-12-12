@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function egg_price()
+    {
+        return $this->hasMany('App\Egg_price', 'user_id');
+    }
 }

@@ -20,7 +20,6 @@ class UserController extends Controller
     {
         $batas = 5;
         $user = User::orderBy('id')->paginate($batas);
-        $no = $batas * ($user->currentPage() - 1);
         $jumlah_user = $user->count();
         $no = $batas * ($user->currentPage() - 1);
         return view('admin.manaj_user', compact('user', 'no', 'jumlah_user'));

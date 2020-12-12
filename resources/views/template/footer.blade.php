@@ -1,5 +1,5 @@
 <!-- FOOTER -->
-<footer id="main-footer" class="bg-dark text-white p-1 fixed-bottom">
+<footer id="main-footer" class="bg-dark text-white p-1">
   <div class="container">
     <div class="row">
       <div class="col">

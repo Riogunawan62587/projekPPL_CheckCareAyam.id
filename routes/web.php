@@ -46,3 +46,7 @@ Route::post('/ayam_sehat/hasil', 'Food_recommendedController@ayam_sehat_hasil')-
 Route::get('/ayam_sakit', 'Food_recommendedController@ayam_sakit')->name('rekomendasi.sakit');
 Route::post('/ayam_sakit/perhitungan', 'Food_recommendedController@ayam_sakit_perhitungan')->name('rekomendasi.sakit_perhitungan');
 Route::post('/ayam_sakit/hasil', 'Food_recommendedController@ayam_sakit_hasil')->name('rekomendasi.sakit_hasil');
+
+Route::get('/harga_telur', 'Egg_PriceController@index')->name('telur.index');
+Route::post('/harga_telur', 'Egg_PriceController@store')->name('telur.store');
+Route::get('/rekap_harga_telur', 'Egg_PriceController@rekap')->name('telur.rekap');

@@ -37,8 +37,8 @@
             <tr class="table-light text-center">
               <th scope="row">{{ ++$no }}</th>
               <td>{{ $dt->user->nama_peternakan }}</b></td>
-              <td>Rp.{{ $dt->harga_jual }}</td>
-              <td>Rp.{{ $dt->harga_beli }}</td>
+              <td>Rp.{{ $dt->harga_jual }}/kg</td>
+              <td>Rp.{{ $dt->harga_beli }}/kg</td>
             </tr>
             @endforeach
           </tbody>

@@ -83,8 +83,8 @@
             <div class="card-body text-center">
               <p class="card-text"><b>{{ $dt->user->nama_peternakan }}</b></p>
               <hr class="garis2">
-              <p class="card-text"><b>Harga Jual : </b>Rp.{{ $dt->harga_jual }}</p>
-              <p class="card-text"><b>Harga Beli : </b>Rp.{{ $dt->harga_beli }}</p>
+              <p class="card-text"><b>Harga Jual : </b>Rp.{{ $dt->harga_jual }}/kg</p>
+              <p class="card-text"><b>Harga Beli : </b>Rp.{{ $dt->harga_beli }}/kg</p>
             </div>
           </div>
         </div>

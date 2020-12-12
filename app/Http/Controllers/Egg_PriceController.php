@@ -21,12 +21,6 @@ class Egg_PriceController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'harga_jual'    => 'required|numeric',
-            'harga_beli'    => 'required|numeric',
-            'tanggal'       => 'required',
-        ]);
-
         $tanggal_sekarang = Carbon::now();
         $telur = new Egg_price;
         $telur->user_id         = $request->user_id;

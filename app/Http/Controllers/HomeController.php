@@ -43,20 +43,6 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-
-        $this->validate($request, [
-            'username'          => 'required|string|max:255',
-            'password'          => 'required|string|min:8|confirmed',
-            'nama'              => 'required|string|max:255',
-            'tanggal_lahir'     => 'required',
-            'alamat'            => 'required|string|max:255',
-            'no_telp'           => 'required|numeric',
-            'email'             => 'required|string|email|max:255',
-            'nama_peternakan'   => 'required|string|max:255',
-            'alamat_peternakan' => 'required|string|max:255',
-            'visi'              => 'required|string|max:255',
-        ]);
-
         $user = User::find($id);
         $user->username           = $request->username;
         $user->password           = Hash::make($request->password);

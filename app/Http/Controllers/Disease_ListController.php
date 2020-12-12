@@ -15,12 +15,6 @@ class Disease_ListController extends Controller
 
     public function simpan_penyakit(Request $request)
     {
-        $this->validate($request, [
-            'nama_penyakit'     => 'required|string',
-            'penyebab_penyakit' => 'required|string',
-            'gejala_penyakit'   => 'required|string',
-        ]);
-
         $daftar_penyakit = new Disease_list;
         $daftar_penyakit->nama_penyakit        = $request->nama_penyakit;
         $daftar_penyakit->penyebab_penyakit    = $request->penyebab_penyakit;
@@ -31,12 +25,6 @@ class Disease_ListController extends Controller
 
     public function update_penyakit(Request $request, $id)
     {
-        $this->validate($request, [
-            'nama_penyakit'     => 'required|string',
-            'penyebab_penyakit' => 'required|string',
-            'gejala_penyakit'   => 'required|string',
-        ]);
-
         $daftar_penyakit = Disease_list::find($id);
         $daftar_penyakit->nama_penyakit        = $request->nama_penyakit;
         $daftar_penyakit->penyebab_penyakit    = $request->penyebab_penyakit;

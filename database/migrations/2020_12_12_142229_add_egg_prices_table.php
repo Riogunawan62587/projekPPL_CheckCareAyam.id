@@ -15,7 +15,7 @@ class AddEggpricesTable extends Migration
     {
         Schema::create('egg_prices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id', 20)->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->integer('harga_jual');
             $table->integer('harga_beli');
             $table->date('tanggal');

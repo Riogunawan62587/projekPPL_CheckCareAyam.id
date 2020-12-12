@@ -36,9 +36,13 @@ class UserController extends Controller
     {
 
         $this->validate($request, [
-            'username' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255',
-            'password' => 'required|string|min:8|confirmed',
+            'username'      => 'required|string|max:255',
+            'password'      => 'required|string|min:8|confirmed',
+            'nama'          => 'required|string|max:255',
+            'tanggal_lahir' => 'required',
+            'alamat'        => 'required|string|max:255',
+            'no_telp'       => 'required|numeric',
+            'email'         => 'required|string|email|max:255',
         ]);
 
         $user = new User;
@@ -72,9 +76,16 @@ class UserController extends Controller
     {
 
         $this->validate($request, [
-            'username' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255',
-            'password' => 'required|string|min:8|confirmed',
+            'username'          => 'required|string|max:255',
+            'password'          => 'required|string|min:8|confirmed',
+            'nama'              => 'required|string|max:255',
+            'tanggal_lahir'     => 'required',
+            'alamat'            => 'required|string|max:255',
+            'no_telp'           => 'required|numeric',
+            'email'             => 'required|string|email|max:255',
+            'nama_peternakan'   => 'required|string|max:255',
+            'alamat_peternakan' => 'required|string|max:255',
+            'visi'              => 'required|string|max:255',
         ]);
 
         $user = User::find($id);

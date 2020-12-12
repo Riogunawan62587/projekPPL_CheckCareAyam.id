@@ -20,6 +20,12 @@ class Food_recommendedController extends Controller
 
     public function ayam_sehat_perhitungan(Request $request)
     {
+        $this->validate($request, [
+            'Jumlah_ayam'     => 'required|numeric',
+            'usia_ayam'       => 'required|numeric',
+            'bobot_ratarata'  => 'required|numeric',
+        ]);
+
         $data_kandang = new Data_kandang;
         $data_kandang->jumlah_ayam      = $request->jumlah;
         $data_kandang->usia_ayam        = $request->usia;
@@ -117,6 +123,12 @@ class Food_recommendedController extends Controller
 
     public function ayam_sakit_perhitungan(Request $request)
     {
+        $this->validate($request, [
+            'usia_ayam'       => 'required|numeric',
+            'bobot_ratarata'  => 'required|numeric',
+            'ciri_ciri'       => 'required|string',
+        ]);
+
         $data_kandang = new Data_kandang;
         $data_kandang->usia_ayam        = $request->usia;
         $data_kandang->bobot_ratarata   = $request->bobot;

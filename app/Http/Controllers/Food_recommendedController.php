@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Data_kandang;
 use App\Rekomendasi_komposisi;
+use Validator;
 
 class Food_recommendedController extends Controller
 {
@@ -18,8 +19,14 @@ class Food_recommendedController extends Controller
         return view('admin.ayam_sehat');
     }
 
-    public function ayam_sehat_perhitungan(Request $request)
+    public function ayam_sehat_perhitungan_halaman(Request $request)
     {
+        $this->validate($request, [
+            'jumlah' => 'required|numeric',
+            'usia' => 'required|numeric|min:1|max:17',
+            'bobot' => 'required|numeric|min:60',
+        ]);
+
         $data_kandang = new Data_kandang;
         $data_kandang->jumlah_ayam      = $request->jumlah;
         $data_kandang->usia_ayam        = $request->usia;
@@ -27,9 +34,17 @@ class Food_recommendedController extends Controller
         $data_kandang->kondisi_khusus   = 'Sehat';
         $data_kandang->save();
 
-        $nilai_toleransi = $data_kandang->bobot_ratarata * 0.01;
-        $batas_toleransi_bawah = 0.07 - $nilai_toleransi;
-        $batas_toleransi_atas = 0.07 + $nilai_toleransi;
+        return redirect()->route('rekomendasi.sehat_perhitungan', ['id' => $data_kandang->id]);
+        // return view('admin.ayam_sehat_perhitungan', compact('data_kandang', 'nilai_toleransi', 'batas_toleransi_bawah', 'batas_toleransi_atas'));
+    }
+
+    public function ayam_sehat_perhitungan($id)
+    {
+        $data_kandang = Data_kandang::findOrFail($id);
+
+        $nilai_toleransi = $data_kandang->bobot_ratarata * 0.1;
+        $batas_toleransi_bawah = $data_kandang->bobot_ratarata - $nilai_toleransi;
+        $batas_toleransi_atas = $data_kandang->bobot_ratarata + $nilai_toleransi;
 
         return view('admin.ayam_sehat_perhitungan', compact('data_kandang', 'nilai_toleransi', 'batas_toleransi_bawah', 'batas_toleransi_atas'));
     }
@@ -94,6 +109,11 @@ class Food_recommendedController extends Controller
 
         // Keseragaman
         $jumlah_dalam_rentang = $request->jumlah_dalam_rentang;
+
+        $this->validate($request, [
+            'jumlah_dalam_rentang' => 'required|numeric|min:1|max:20',
+        ]);
+
         $keseragaman = $jumlah_dalam_rentang / $jumlah_ayam * 100;
 
         if ($keseragaman >= 80) {
@@ -117,6 +137,12 @@ class Food_recommendedController extends Controller
 
     public function ayam_sakit_perhitungan(Request $request)
     {
+        $this->validate($request, [
+            'usia' => 'required|numeric|min:1|max:17',
+            'bobot' => 'required|numeric|min:60',
+            'ciri' => 'required|alpha',
+        ]);
+
         $data_kandang = new Data_kandang;
         $data_kandang->usia_ayam        = $request->usia;
         $data_kandang->bobot_ratarata   = $request->bobot;

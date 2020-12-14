@@ -24,7 +24,7 @@
 
                     <div class="col-md-6">
                       <input id="username" type="text" class="form-control @error('username') is-invalid @enderror"
-                        name="username" value="{{ ($user->username) }}" required autocomplete="username" autofocus>
+                        name="username" value="{{ ($user->username) }}" autocomplete="username" autofocus>
 
                       @error('username')
                       <span class="invalid-feedback" role="alert">
@@ -39,7 +39,7 @@
 
                     <div class="col-md-6">
                       <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
-                        value="{{ ($user->nama) }}" required autocomplete="nama" autofocus>
+                        value="{{ ($user->nama) }}" autocomplete="nama" autofocus>
 
                       @error('nama')
                       <span class="invalid-feedback" role="alert">
@@ -56,7 +56,7 @@
                     <div class="col-md-6">
                       <input id="tanggal_lahir" type="date"
                         class="form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir"
-                        value="{{ ($user->tanggal_lahir) }}" required autocomplete="tanggal_lahir" autofocus>
+                        value="{{ ($user->tanggal_lahir) }}" autocomplete="tanggal_lahir" autofocus>
 
                       @error('tanggal_lahir')
                       <span class="invalid-feedback" role="alert">
@@ -71,7 +71,7 @@
 
                     <div class="col-md-6">
                       <input id="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror"
-                        name="alamat" value="{{ ($user->alamat) }}" required autocomplete="alamat" autofocus>
+                        name="alamat" value="{{ ($user->alamat) }}" autocomplete="alamat" autofocus>
 
                       @error('alamat')
                       <span class="invalid-feedback" role="alert">
@@ -86,7 +86,7 @@
 
                     <div class="col-md-6">
                       <input id="no_telp" type="text" class="form-control @error('no_telp') is-invalid @enderror"
-                        name="no_telp" value="{{ ($user->no_telp) }}" required autocomplete="no_telp" autofocus>
+                        name="no_telp" value="{{ ($user->no_telp) }}" autocomplete="no_telp" autofocus>
 
                       @error('no_telp')
                       <span class="invalid-feedback" role="alert">
@@ -144,7 +144,7 @@
 
                     <div class="col-md-6">
                       <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                        name="email" value="{{ ($user->email) }}" required autocomplete="email">
+                        name="email" value="{{ ($user->email) }}" autocomplete="email">
 
                       @error('email')
                       <span class="invalid-feedback" role="alert">
@@ -164,7 +164,7 @@
                     <div class="col-md-6">
                       <input id="nama_peternakan" type="text"
                         class="form-control @error('nama_peternakan') is-invalid @enderror" name="nama_peternakan"
-                        value="{{ ($user->nama_peternakan) }}" required autocomplete="nama_peternakan" autofocus>
+                        value="{{ ($user->nama_peternakan) }}" autocomplete="nama_peternakan" autofocus>
 
                       @error('nama_peternakan')
                       <span class="invalid-feedback" role="alert">
@@ -181,7 +181,7 @@
                     <div class="col-md-6">
                       <input id="alamat_peternakan" type="text"
                         class="form-control @error('alamat_peternakan') is-invalid @enderror" name="alamat_peternakan"
-                        value="{{ ($user->alamat_peternakan) }}" required autocomplete="alamat_peternakan" autofocus>
+                        value="{{ ($user->alamat_peternakan) }}" autocomplete="alamat_peternakan" autofocus>
 
                       @error('alamat_peternakan')
                       <span class="invalid-feedback" role="alert">
@@ -198,7 +198,7 @@
                     <div class="col-md-6">
                       <input id="tanggal_terbentuk" type="date"
                         class="form-control @error('tanggal_terbentuk') is-invalid @enderror" name="tanggal_terbentuk"
-                        value="{{ ($user->tanggal_terbentuk) }}" required autocomplete="tanggal_terbentuk" autofocus>
+                        value="{{ ($user->tanggal_terbentuk) }}" autocomplete="tanggal_terbentuk" autofocus>
 
                       @error('tanggal_terbentuk')
                       <span class="invalid-feedback" role="alert">
@@ -213,7 +213,7 @@
 
                     <div class="col-md-6">
                       <input id="visi" type="text" class="form-control @error('alamat') is-invalid @enderror"
-                        name="visi" value="{{ ($user->visi) }}" required autocomplete="visi" autofocus>
+                        name="visi" value="{{ ($user->visi) }}" autocomplete="visi" autofocus>
 
                       @error('visi')
                       <span class="invalid-feedback" role="alert">
@@ -228,7 +228,7 @@
 
                     <div class="col-md-6">
                       <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                        name="password" required autocomplete="new-password">
+                        name="password" autocomplete="new-password">
 
                       @error('password')
                       <span class="invalid-feedback" role="alert">
@@ -244,7 +244,7 @@
 
                     <div class="col-md-6">
                       <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
-                        required autocomplete="new-password">
+                       autocomplete="new-password">
                     </div>
                   </div>
                 </div>

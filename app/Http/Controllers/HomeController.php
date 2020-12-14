@@ -43,6 +43,11 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'nama' => 'required|alpha',
+            'no_telp' => 'numeric',
+        ]);
+
         $user = User::find($id);
         $user->username           = $request->username;
         $user->password           = Hash::make($request->password);

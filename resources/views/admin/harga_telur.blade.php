@@ -60,6 +60,10 @@
         <div class="row justify-content-center mt-2">
           <p>{{ $daftar_telur->links() }}</p>
         </div>
+        <div class="container">
+          <button type="button" class="btn btn-lg btn-light" disabled>Rata - Rata Harga Jual : Rp
+            {{ number_format($rata_rata, 2,",",".") }}</button>
+        </div>
         @endif
         @if (Auth::check() && Auth::user()->role_id == 1)
         <a href="/rekap_harga_telur" class="btn btn-success">Rekap Data
@@ -78,13 +82,15 @@
       <div class="container row justify-content-center">
         @foreach ($daftar_telur as $dt)
         <div class="col-4 cd1">
-          <div class="card cd m-0" style="width: 15rem;">
-            <img src="/img/telur_daftar.jpg" class="card-img-top" alt="..." style="width: 15rem; border-radius: 10px">
+          <div class="card cd m-0" style="width: 16rem;">
+            <img src="/img/telur_daftar.jpg" class="card-img-top" alt="..." style="width: 16rem; border-radius: 10px">
             <div class="card-body text-center">
               <p class="card-text"><b>{{ $dt->user->nama_peternakan }}</b></p>
               <hr class="garis2">
+              <p class="card-text"><b>Alamat : </b>{{ $dt->user->alamat }}</p>
               <p class="card-text"><b>Harga Jual : </b>Rp.{{ $dt->harga_jual }}/kg</p>
               <p class="card-text"><b>Harga Beli : </b>Rp.{{ $dt->harga_beli }}/kg</p>
+              <p class="card-text"><b>Tanggal Penginputan : <br></b>{{ $tanggal_sekarang->format('d-m-Y') }}</p>
             </div>
           </div>
         </div>

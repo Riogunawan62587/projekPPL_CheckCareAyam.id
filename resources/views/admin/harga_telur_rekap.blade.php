@@ -28,8 +28,10 @@
             <tr class="text-center">
               <th scope="col">No</th>
               <th scope="col">Nama Peternakan</th>
+              <th scope="col">Alamat</th>
               <th scope="col">Harga Jual</th>
               <th scope="col">Harga Beli</th>
+              <th scope="col">Tanggal Penginputan</th>
             </tr>
           </thead>
           <tbody>
@@ -37,8 +39,10 @@
             <tr class="table-light text-center">
               <th scope="row">{{ ++$no }}</th>
               <td>{{ $dt->user->nama_peternakan }}</b></td>
+              <td>{{ $dt->user->alamat }}</b></td>
               <td>Rp.{{ $dt->harga_jual }}/kg</td>
               <td>Rp.{{ $dt->harga_beli }}/kg</td>
+              <td>{{ $dt->tanggal }}</td>
             </tr>
             @endforeach
           </tbody>

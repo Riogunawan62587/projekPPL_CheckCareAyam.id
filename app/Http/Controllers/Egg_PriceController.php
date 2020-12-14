@@ -15,8 +15,9 @@ class Egg_PriceController extends Controller
         $tanggal_sekarang = Carbon::now();
         $batas = 6;
         $daftar_telur = Egg_price::paginate($batas);
+        $rata_rata      = Egg_price::avg('harga_jual');
         $data_peternakan = User::pluck('nama_peternakan', 'id');
-        return view('admin.harga_telur', compact('tanggal_sekarang', 'daftar_telur', 'data_peternakan'));
+        return view('admin.harga_telur', compact('tanggal_sekarang', 'daftar_telur', 'data_peternakan', 'rata_rata'));
     }
 
     public function store(Request $request)

@@ -144,10 +144,10 @@ nav {
 }
 
 .jumbotrondash {
-  background-image: url('/img/2727.jpg');
+  background-image: url('/img/2927.jpg');
   background-size: cover;
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -197,7 +197,7 @@ footer {
 /* Detail */
 
 .jumbotrondetail {
-  background-image: url('/img/2727.jpg');
+  background-image: url('/img/2927.jpg');
   background-size: cover;
   width: 100%;
   min-height: 100vh;
@@ -229,7 +229,7 @@ footer {
 
 /* Edit */
 .jumbotronedit {
-  background-image: url('/img/2727.jpg');
+  background-image: url('/img/2927.jpg');
   background-size: cover;
   width: 100%;
   min-height: 100vh;
@@ -250,49 +250,11 @@ footer {
 
 /* Daftar Penyakit */
 .jumbotron-daftar_penyakit {
-  background-image: url('/img/8360.jpg');
-  background-size: cover;
-  width: 100%;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
+  background-color: rgb(240, 240, 240);
 }
 
-.daftar_penyakit {
-  background-color: rgba(0, 0, 0, 0.76);
-  background-size: cover;
-  width: 100%;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: inline-block;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 1rem;
-  color: white;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-
-  font-family: 'Viga', sans-serif;
-}
-
-.garis {
-  background-color: white;
+main {
+  text-align: center;
 }
 
 .gbr {
@@ -707,3 +669,4 @@ footer {
 .table {
   color: black;
 }
+

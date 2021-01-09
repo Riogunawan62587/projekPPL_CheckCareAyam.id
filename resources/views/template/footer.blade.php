@@ -1,10 +1,10 @@
 <!-- FOOTER -->
-<footer id="main-footer" class="bg-dark text-white p-1">
+<footer id="main-footer" class="bg-light p-1">
   <div class="container">
     <div class="row">
       <div class="col">
         <p class="text-center" style="margin-top: 5px">
-          Copyright &copy; 2020 By CheckCareAyam.id
+          <b>Copyright &copy; 2020 By CheckCareAyam.id</b>
         </p>
       </div>
     </div>

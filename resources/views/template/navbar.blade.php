@@ -2,7 +2,7 @@
 
 <?php $user = Auth::user(); ?>
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0 nav_set">
+<nav class="navbar navbar-expand-sm navbar-light bg-light p-0 nav_set">
   <div class="container">
     <a href="/home" class="navbar-brand">DASHBOARD+</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">

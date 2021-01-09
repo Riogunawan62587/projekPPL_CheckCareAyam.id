@@ -16,7 +16,7 @@
             {{ number_format($rata_rata, 2,",",".") }}</button>
         </div>
         @endif
-        <a href="/home" class="btn btn-info text-white mt-2">Kembali</a>
+        <a href="{{route('telur.index')}}" class="btn btn-info text-white mt-2">Kembali</a>
       </div>
     </div>
   </div>

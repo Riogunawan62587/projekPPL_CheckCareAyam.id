@@ -40,9 +40,13 @@
         <div class="container content-kanan">
           <h1>Rekomendasi Pakan</h1>
           <img src="{{ asset('/img/ayam_sakit.png') }}" style="width: 180px">
-          <div class="container mt-3">
+          <div class="container mt-4 mb-1">
             <div class="row justify-content-center">
               <h4>Total Pakan : {{ $pakan_per_umur }} gr</h4>
+            </div>
+            <div class="row justify-content-center">
+              <h5>50% : 35% : 15%
+              </h5>
             </div>
             <div class="row justify-content-center">
               <div class="col mt-2 p1">

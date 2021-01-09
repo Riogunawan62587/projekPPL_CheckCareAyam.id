@@ -87,10 +87,10 @@
             <div class="card-body text-center">
               <p class="card-text"><b>{{ $dt->user->nama_peternakan }}</b></p>
               <hr class="garis2">
-              <p class="card-text"><b>Alamat : </b>{{ $dt->user->alamat }}</p>
-              <p class="card-text"><b>Harga Jual : </b>Rp.{{ $dt->harga_jual }}/kg</p>
-              <p class="card-text"><b>Harga Beli : </b>Rp.{{ $dt->harga_beli }}/kg</p>
-              <p class="card-text"><b>Tanggal Penginputan : <br></b>{{ $tanggal_sekarang->format('d-m-Y') }}</p>
+              <label class="card-text"><b>Alamat : </b>{{ $dt->user->alamat }}</label>
+              <label class="card-text"><b>Harga Jual : </b>Rp.{{ $dt->harga_jual }}/kg</label>
+              <label class="card-text"><b>Harga Beli : </b>Rp.{{ $dt->harga_beli }}/kg</label>
+              <label class="card-text"><b>Tanggal Penginputan : <br></b>{{ $dt->tanggal }}</label>
             </div>
           </div>
         </div>

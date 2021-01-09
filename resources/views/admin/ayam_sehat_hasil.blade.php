@@ -51,6 +51,10 @@
               <h4>Total Pakan : {{ $jumlah_pakan_perkandang }} gr</h4>
             </div>
             <div class="row justify-content-center">
+              <h5>50% : 35% : 15%
+              </h5>
+            </div>
+            <div class="row justify-content-center">
               <div class="col mt-2">
                 <div class="row2 d-lg-block pt-1">
                   <p class="m-0">Jagung</p>

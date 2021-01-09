@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Data_kandang;
 use App\Rekomendasi_komposisi;
-use Validator;
 
 class Food_recommendedController extends Controller
 {
